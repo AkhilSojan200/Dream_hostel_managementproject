@@ -1,0 +1,22 @@
+{% extends 'bootstrap.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="card" style="width: 30rem;margin-left:25rem ">
+    <div class="card text-bg-success p-3">
+         <div class="col-sm-10">
+<form method="post" enctype="multipart/form-data">
+<h2 style="padding-left:25px">Student Registration</h2>
+     {% csrf_token %}
+
+    {{form|crispy}}
+    {{form1|crispy}}
+
+<button type="submit" class="btn btn-outline-light text-bg-dark ">Submit</button>
+    <a href="{% url 'index'  %}" class="btn btn-primary btn-round">Back</a>
+
+</form>
+    </div>
+</div>
+</div>
+
+{% endblock %}

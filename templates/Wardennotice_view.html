@@ -1,0 +1,56 @@
+{% extends 'bootstrap.html' %}
+{% block content %}
+
+
+
+
+
+
+      <div class="container" >
+ <div class="card" style="width:80rem;margin-top:60px">
+    <div class="card text-bg-dark" style="height:400px">
+        <div class="row justify-content-center" >
+      <div class="col-sm-10">
+
+
+
+ <h1 style="padding-left:350px;padding-top:20px">General Notice</h1>
+          <a href="{% url 'warden_dashboard'  %}" class="btn btn-primary btn-round">Dashboard</a>
+        <table class="table">
+            <tr>
+                <th>Date</th>
+                <th>Notice_heading</th>
+                <th>Notice_details</th>
+                <th>Update</th>
+                <th>delete</th>
+
+
+            </tr>
+
+
+                {% for i in noticeview %}
+<tr>
+<td>{{i.date}}</td>
+    <td>{{i.notice_heading}}</td>
+    <td>{{i.notice_details}}</td>
+<td>
+
+    <a href="{% url 'notice_edit' i.id %}">
+       <button type="button" class="btn btn-info">edit</button></a></td>
+    <td>
+    <a href="{% url 'notice_delete' i.id %}">
+        <button type="button" class="btn btn-info">delete</button></a></td>
+</tr>
+
+{%endfor%}
+
+</table>
+      </div>
+        </div>
+    </div>
+ </div>
+      </div>
+
+{% endblock %}
+
+

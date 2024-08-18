@@ -1,0 +1,55 @@
+{% extends 'bootstrap.html' %}
+{% block content %}
+
+
+    <div class="card" style="width: 55rem;margin-left:300px;margin-top:50px">
+    <div class="card text-bg-dark">
+        <div class="row justify-content-center" >
+      <div class="col-sm-10">
+          <table  class="table">
+
+
+<h2 style="padding-left:200px;padding-top:30px">View Students</h2>
+    <tr>
+        <th>Name</th>
+
+        <th>Address</th>
+        <th>Phone_no</th>
+        <th>Update</th>
+          <th>Delete</th>
+
+    </tr>
+
+
+
+{% for i in viewstudent %}
+<tr>
+<td>{{i.name}}</td>
+
+    <td>{{i.address}}</td>
+    <td>{{i.phone_no}}</td>
+
+<td>
+    <a href="{% url 'student_edit' i.id %}">
+       <button type="button" class="btn btn-primary">edit</button></a>
+    </td>
+     <td>
+    <a href="{% url 'delete_student' i.id %}">
+        <button type="button" class="btn btn-info">delete</button></a>
+     </td>
+
+
+
+
+
+</tr>
+
+
+{%endfor%}
+
+</table>
+<a href="{% url 'admin_dashboard'  %}" class="btn btn-primary btn-round">Back</a>
+</div>
+</div>
+</div>
+{% endblock %}

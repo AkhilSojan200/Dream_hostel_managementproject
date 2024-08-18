@@ -1,0 +1,22 @@
+{% extends 'room_view.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="container">
+<div class="card" >
+
+
+<form method="post" enctype="multipart/form-data">
+     {% csrf_token %}
+
+    {{editroom|crispy}}
+<input type="submit">
+
+
+</form>
+
+
+
+</div>
+</div>
+{% endblock %}

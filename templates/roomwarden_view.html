@@ -1,0 +1,44 @@
+{% extends 'bootstrap.html' %}
+{% block content %}
+
+<div class="container" >
+ <div class="card" style="width:80rem">
+    <div class="card text-bg-dark" >
+        <div class="row justify-content-center" >
+      <div class="col-sm-10">
+<table  class="table">
+    <h2 style="padding-left:440px;">View Rooms</h2>
+    <a href="{% url 'warden_dashboard'  %}" class="btn btn-primary btn-round">Back</a>
+
+    <tr>
+        <th>Room_no</th>
+        <th>Details</th>
+        <th>Block_name</th>
+        <th>No_of_beds </th>
+        <th>Monthly_fee</th>
+        <th>Images</th>
+
+    </tr>
+
+
+{% for i in wardenviewroom %}
+<tr>
+<td>{{i.room_no}}</td>
+    <td>{{i.details}}</td>
+    <td>{{i.block_name}}</td>
+    <td>{{i.no_of_beds}}</td>
+    <td>{{i.monthly_fee}}</td>
+
+    <td><img src="{{ i.image.url }}" alt="demo" height="150px" width="150px"></td>
+
+</tr>
+
+{%endfor%}
+
+</table>
+</div>
+</div>
+</div>
+ </div>
+</div>
+{% endblock %}

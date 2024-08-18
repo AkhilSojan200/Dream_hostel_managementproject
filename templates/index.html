@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <title>Dream Team Hostel</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Indiranagar, Bangalore</small>
+
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>goodstay@gmail.com</small>
+                    <small class="me-3 text-light" style="margin-left:30px"><i class="fa fa-phone-alt me-2"></i>+91 9544035401</small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-twitter fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
+
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-instagram fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href=""><i class="fab fa-youtube fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar & Carousel Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+<!--                <h1 class="m-0"><i class="fa fa-user-tie me-2"></i>Startup</h1>-->
+
+                 <h1 class="text-blue fw-bold d-block">Good<span class="text-primary">Stay</span> </h1>
+                        <h3 class="text-black fw-bold">Hostel</h3>
+
+<!--                 <div class="container-fluid bg-primary">&ndash;&gt;-->
+<!--            <div class="container">-->
+<!--                <nav class="navbar navbar-dark navbar-expand-lg py-0">-->
+<!--                    <a href="index.html" class="navbar-brand">-->
+<!--                        <h1 class="text-white fw-bold d-block">Good<span class="text-secondary">Stay</span> </h1>-->
+<!--                        <h3 class="text-white fw-bold">Hostel</h3>-->
+<!--                    </a>-->
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="home.html" class="nav-item nav-link active">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About Us</a>
+                    <a href="service.html" class="nav-item nav-link">Services</a>
+                    <a href="service.html" class="nav-item nav-link">Gallery</a>
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Registration</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="{% url 'student_registration' %}" class="dropdown-item">Students</a>
+                            <a href="{% url 'warden_registration' %}" class="dropdown-item">Warden</a>
+
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+<!--                <butaton type="button" class="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>-->
+<!--                <a href="https://htmlcodex.com/startup-company-website-template" class="btn btn-primary py-2 px-4 ms-3">Login</a>-->
+                <a href="{% url 'login_page' %}">
+                    <button type="button" class="btn btn-outline-success btn-lg px-3" style="margin-left:40px;border-radius:15px">login</button></a>
+            </div>
+        </nav>
+
+        <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/202104160446198345-54386162585911edad680a58a9feac02.jpg" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+
+                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Hostel Management System</h1>
+                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Comfortable and Affordable Hostels Rooms</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100" src="https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/202104160446198345-aba25b24585911ed9ce30a58a9feac02.jpg" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+
+                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Hostel Management System</h1>
+                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Comfortable and Affordable Hostels Rooms</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <!-- Navbar & Carousel End -->
+
+
+    <!-- Full Screen Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center justify-content-center">
+                    <div class="input-group" style="max-width: 600px;">
+                        <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Type search keyword">
+                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Full Screen Search End -->
+
+
+    <!-- Facts Start -->
+<!--    <div class="container-fluid facts py-5 pt-lg-0">-->
+<!--        <div class="container py-5 pt-lg-0">-->
+<!--            <div class="row gx-0">-->
+<!--                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.1s">-->
+<!--                    <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">-->
+<!--                        <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">-->
+<!--                            <i class="fa fa-users text-primary"></i>-->
+<!--                        </div>-->
+<!--                        <div class="ps-4">-->
+<!--                            <h5 class="text-white mb-0">Happy Clients</h5>-->
+<!--                            <h1 class="text-white mb-0" data-toggle="counter-up">12345</h1>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.3s">-->
+<!--                    <div class="bg-light shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">-->
+<!--                        <div class="bg-primary d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">-->
+<!--                            <i class="fa fa-check text-white"></i>-->
+<!--                        </div>-->
+<!--                        <div class="ps-4">-->
+<!--                            <h5 class="text-primary mb-0">Projects Done</h5>-->
+<!--                            <h1 class="mb-0" data-toggle="counter-up">12345</h1>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.6s">-->
+<!--                    <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">-->
+<!--                        <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">-->
+<!--                            <i class="fa fa-award text-primary"></i>-->
+<!--                        </div>-->
+<!--                        <div class="ps-4">-->
+<!--                            <h5 class="text-white mb-0">Win Awards</h5>-->
+<!--                            <h1 class="text-white mb-0" data-toggle="counter-up">12345</h1>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+    <!-- Facts Start -->
+
+
+     <!-- About Start -->
+        <div class="container-fluid py-5 my-5">
+             <div class=" wow zoomIn" data-wow-delay="0.9s">
+            <div class="container pt-5">
+                <div class="row g-5">
+                    <div class="col-lg-5 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
+                        <div class="h-100 position-relative">
+                            <img src="https://www.gopalancolleges.com/gpuc/images/hostel-facility.jpg" class="img-fluid w-75 rounded" alt="" style="margin-bottom: 25%;">
+                            <div class="position-absolute w-75" style="top: 25%; left: 25%;">
+                                <img src="https://img.cdn.zostel.com/zostel/gallery/images/EptAAX4PTQCPGu6sbeYkVA/zostel-bangalore-10-bed-mixed-dorm-20221021084139.jpg" class="img-fluid w-100 rounded" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".5s">
+                        <h5 class="text-primary">About Us</h5>
+                        <h1 class="mb-4">Comfortable and Affordable Hostels Rooms</h1>
+                        <p>We, GoodStay Hostel, situated at indiranagar,bangalore,offer a pocket friendly stay to each patron and welcome them with complete warmth and hospitality.We offer an array of all essential services that are rendered by the hostel for a hassle free stay at no extra costs.</p>
+                        <p class="mb-4">For accommodation, the property offers spacious, airy and well-lit rooms, featuring sophisticated and welcoming ambience with the warmth and comfort of home.We take utmost care of the safety and security of individuals and their belongings staying in our hostel.</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+
+ <!-- Services Start -->
+<!--     <div class="col-lg-4  wow zoomIn" data-wow-delay="0.9s" style="min-height: 350px;">-->
+<!--                    <div class="position-relative h-100">-->
+<!--                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="{% static 'img/feature.jpg' %}" style="object-fit: cover;">-->
+<!--                    </div>-->
+<!--                </div>-->
+        <div class="container-fluid py-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class=" wow zoomIn" data-wow-delay="0.9s">
+
+<!--        <div class="container-fluid services py-5 mb-5">-->
+            <div class="container py-5 mb-5">
+                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
+                    <h1 class="text-primary"> Services</h1>
+
+                </div>
+                <div class="row g-5 services-inner">
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+                        <div class="services-item bg-light">
+                            <div class="p-4 text-center services-content">
+                                <div class="services-content-icon">
+
+<!--                                <div class="carousel-item">-->
+<!--                        <img src="https://media.istockphoto.com/id/612417952/photo/cctv-security-camera-with-blurred-background.jpg?s=612x612&w=0&k=20&c=vJP1w4siqfxlrRZdcp9oXCzq4lMLgYYpwYFqfsSIctI=" class="img-fluid">-->
+<!--                        <div class="carousel-caption">-->
+<!--                            <div class="container carousel-content">-->
+                                    <img src="https://img.cdn.zostel.com/zostel/gallery/images/EptAAX4PTQCPGu6sbeYkVA/zostel-bangalore-10-bed-mixed-dorm-20221021084139.jpg" class="img-fluid">
+
+                                    <h4 class="mb-3">Furnished Rooms</h4>
+
+                                    <p class="mb-4">We provide fully furnished rooms with quality mattresses,tables, and other required facilities.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+<!--                                 </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
+                        <div class="services-item bg-light">
+                            <div class="p-4 text-center services-content">
+                                <div class="services-content-icon">
+
+                                    <img src="https://media.istockphoto.com/id/1463546434/photo/woman-using-laptop-and-smartphone-connected-to-wifi-at-table-indoors-closeup.jpg?s=612x612&w=0&k=20&c=DTcnzy8dGkBY987qDiA5CzQLxDrk06h4T8M-BKGvvTI=" class="img-fluid">
+                                    <h4 class="mb-3">WIFI</h4>
+                                    <p class="mb-4">We provide wireless high speed internet so that you can stay connected with your friends  and family.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
+                        <div class="services-item bg-light">
+                            <div class="p-4 text-center services-content">
+                                <div class="services-content-icon">
+                                    <img src="https://t4.ftcdn.net/jpg/07/04/90/77/240_F_704907794_KLWvOc8s8nStg7egJGo2zHNBcNeGitCD.jpg" class="img-fluid">
+                                    <h4 class="mb-3">Mess</h4>
+                                    <p class="mb-4">We cater to your food requirements as well.We provide breakfast, lunch & dinner services in our mess.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+                        <div class="services-item bg-light">
+                            <div class="p-4 text-center services-content">
+                                <div class="services-content-icon">
+                                    <img src="https://media.gettyimages.com/id/1188433452/photo/full-length-of-man-cleaning-bedroom-with-vacuum-cleaner.jpg?s=612x612&w=0&k=20&c=E30Nm8Y2-CjdI4Hm1XxThEZhD2q97o0LuQ4pju8bNac=" class="img-fluid">
+                                    <h4 class="mb-3">Housekeeping</h4>
+                                    <p class="mb-4">We also provide housekeeping services like laundry, dish cleaning  and room cleaning based on requirements. </p>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
+                        <div class="services-item bg-light">
+                            <div class="p-4 text-center services-content">
+                                <div class="services-content-icon">
+                                   <img src="https://media.istockphoto.com/id/1424401553/photo/security-guard-patrolling-in-fenced-commercial-area.jpg?s=612x612&w=0&k=20&c=M1tohj279pVyqemNgtAfdB_kyTLG5uBFvdvKoYCugAQ=" class="img-fluid">
+                                    <h4 class="mb-3">Security Guard</h4>
+                                    <p class="mb-4">Depending on the purpose of keeping a close watch on the visitors and passersby we provide efficient watchmen.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
+                        <div class="services-item bg-light">
+                            <div class="p-4 text-center services-content">
+                                <div class="services-content-icon">
+                                    <img src="https://media.istockphoto.com/id/612417952/photo/cctv-security-camera-with-blurred-background.jpg?s=612x612&w=0&k=20&c=vJP1w4siqfxlrRZdcp9oXCzq4lMLgYYpwYFqfsSIctI=" class="img-fluid">
+                                    <h4 class="mb-3">CCTV</h4>
+                                    <p class="mb-4">CCTV cameras to ensure student safety at hostels</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Services End -->
+
+
+  <!-- Project Start -->
+        <div class="container-fluid project py-5 mb-5">
+            <div class="container">
+                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
+                    <h1 class="text-primary">Gallery</h1>
+
+                </div>
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+                        <div class="project-item">
+                            <div class="project-img">
+                                <img src="https://lh5.googleusercontent.com/p/AF1QipNSl5AxteHWu1nKsu-ddhVzllSK-VW5Lcp6dKTe=w253-h168-k-no" class="img-fluid w-100 rounded" alt=""style="height:250px">
+                                <div class="project-content">
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
+                        <div class="project-item">
+                            <div class="project-img">
+                                <img src="https://www.myroomie.in/assets/img/property/camellia/hostel%20room%20camellia.jpg" class="img-fluid w-100 rounded" alt="" style="height:250px">
+                                <div class="project-content">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
+                        <div class="project-item">
+                            <div class="project-img">
+                                <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1380&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid w-100 rounded" alt="" style="height:250px">
+                                <div class="project-content">
+<!--                                    <a href="#" class="text-center">-->
+<!--                                        <h4 class="text-secondary">Mobile Info</h4>-->
+<!--                                        <p class="m-0 text-white">Upcomming Phone</p>-->
+<!--                                    </a>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+                        <div class="project-item">
+                            <div class="project-img">
+                                <img src="https://res.cloudinary.com/stanza-living/image/upload/f_auto,q_auto,w_600/e_improve/e_sharpen:30/v1585230219/Website/CMS-Uploads/gg2kktgdcehsmf1rxoei.jpg" class="img-fluid w-100 rounded" alt="">
+                                <div class="project-content">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
+                        <div class="project-item">
+                            <div class="project-img">
+                                <img src="https://st3.depositphotos.com/24655854/34137/i/450/depositphotos_341374464-stock-photo-bangalore-capital-largest-city-indian.jpg" class="img-fluid w-100 rounded" alt="" style="height:250px">
+                                <div class="project-content">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
+                        <div class="project-item">
+                            <div class="project-img">
+                                <img src="https://images.unsplash.com/photo-1509660933844-6910e12765a0?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid w-100 rounded" alt="" style="height:250px">
+                                <div class="project-content">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Project End -->
+
+
+
+
+
+
+
+             <!-- Testimonial Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 600px;">
+                <h2 class="fw-bold text-primary text-uppercase">Testimonial</h2>
+
+            </div>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.6s">
+                <div class="testimonial-item bg-light my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
+                        <img class="img-fluid rounded" src="https://cdn.pixabay.com/photo/2023/02/17/16/25/man-7796384_640.jpg" style="width: 60px; height: 60px;" >
+                        <div class="ps-4">
+                            <h4 class="text-primary mb-1">Amal Johnson</h4>
+                            <small class="text-uppercase">Student</small>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        Was really happy with their service while i was staying there.Would recommend others as well.
+                    </div>
+                </div>
+                <div class="testimonial-item bg-light my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
+                        <img class="img-fluid rounded" src="{% static 'img/testimonial-2.jpg' %}" style="width: 60px; height: 60px;" >
+                        <div class="ps-4">
+                            <h4 class="text-primary mb-1">Aditya pradhan</h4>
+                            <small class="text-uppercase">Student</small>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        The facilities they have in their hostel rooms are really good.You will feel like you are at home.
+                    </div>
+                </div>
+                <div class="testimonial-item bg-light my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
+                        <img class="img-fluid rounded" src="{% static 'img/testimonial-3.jpg' %}" style="width: 60px; height: 60px;" >
+                        <div class="ps-4">
+                            <h4 class="text-primary mb-1">Tony Joshy</h4>
+
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                       The place is perfect and the cleanliness is very good perfect for students with free wifi
+                    </div>
+                </div>
+                <div class="testimonial-item bg-light my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
+                        <img class="img-fluid rounded" src="https://media.istockphoto.com/id/691910449/photo/smiling-businessman-with-smart-phone-and-cup.webp?b=1&s=170667a&w=0&k=20&c=itV6Vcgn1OkJ0dvXi5LfSBL7BHOPWrOI5cszDZmtqWo=" style="width: 60px; height: 60px;" >
+                        <div class="ps-4">
+                            <h4 class="text-primary mb-1">Sreeraj Kumar</h4>
+                            <small class="text-uppercase">Profession</small>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        It's amazing experience to live in GoodStay Boys Hostel. The owner is very good in Nature. They take care of all the students and staff of hostel.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+             <!-- Testimonial Start -->
+<!--        <div class="container-fluid testimonial py-5 mb-5">-->
+<!--            <div class="container">-->
+<!--                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">-->
+<!--                    <h2 class="text-primary">Testimonial</h2>-->
+
+
+
+
+
+<!--                </div>-->
+<!--                <div class="owl-carousel testimonial-carousel wow fadeIn" data-wow-delay=".5s">-->
+<!--                    <div class="testimonial-item border p-4">-->
+<!--                        <div class="d-flex align-items-center">-->
+<!--                            <div class="">-->
+<!--                                <img src="data:image/jpeg;base64,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" alt="">-->
+<!--                            </div>-->
+<!--                            <div class="ms-4">-->
+<!--                                <h4 class="text-secondary">Amal Johnson</h4>-->
+<!--                                <p class="m-0 pb-3">Student</p>-->
+<!--                                <div class="d-flex pe-5">-->
+<!--                                    <i class="fas fa-star me-1 text-primary"></i>-->
+<!--                                    <i class="fas fa-star me-1 text-primary"></i>-->
+<!--                                    <i class="fas fa-star me-1 text-primary"></i>-->
+<!--                                    <i class="fas fa-star me-1 text-primary"></i>-->
+<!--                                    <i class="fas fa-star me-1 text-primary"></i>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="border-top mt-4 pt-3">-->
+<!--                            <p class="mb-0">Was really happy with their service while i was staying there.Would recommend others as well.</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="testimonial-item border p-4">-->
+<!--                        <div class=" d-flex align-items-center">-->
+<!--                            <div class="">-->
+<!--                                <img src="data:image/jpeg;base64,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" alt=""style="height:140px">-->
+<!--                            </div>-->
+<!--                            <div class="ms-4">-->
+<!--                                <h4 class="text-secondary">Aditya pradhan</h4>-->
+<!--                                <p class="m-0 pb-3">student</p>-->
+<!--                                <div class="d-flex pe-5">-->
+<!--                                    <i class="fas fa-star me-1 text-primary"></i>-->
+<!--                                    <i class="fas fa-star me-1 text-primary"></i>-->
+<!--                                    <i class="fas fa-star me-1 text-primary"></i>-->
+<!--                                    <i class="fas fa-star me-1 text-primary"></i>-->
+<!--                                    <i class="fas fa-star me-1 text-primary"></i>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="border-top mt-4 pt-3">-->
+<!--                            <p class="mb-0">The facilities they have in their hostel rooms are really good.You will feel like you are at home.</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="testimonial-item border p-4">-->
+<!--                        <div class=" d-flex align-items-center">-->
+<!--                            <div class="">-->
+<!--                                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMSEhUUEhMWFRUXFxoaGRgXFxgaGBsdGhgdGhgbGBoYHSggHRslGxgXIjEhJSkrLi4uFx81ODMtNygtLisBCgoKDg0OGxAQGi0lHyUtNTAuLy0tLS0tLy01LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAFBgQHAAIDAQj/xABKEAACAQIEAwYDBAgCCAQHAQABAhEAAwQSITEFQVEGEyJhcYEykaEHscHwFCMzQlJistFy4RUkQ3OCkqLxNDWzwiVkdHWDo9IW/8QAGgEAAgMBAQAAAAAAAAAAAAAAAwQBAgUABv/EADARAAIBAgQDBQgDAQAAAAAAAAABAgMRBBIhMUFRcRMiMmHBBTOBkaGx0fAj4fGy/9oADAMBAAIRAxEAPwBlx4fu27tQzxoC2Xn15aTQEYnG2bSDurJQg/E2cwDzJad6O49SbbABWJgAOYUyRuaG3OH3lMHBYc9IcfjQKEU1r9jHqZ2+6v35C7i8didDnRSdgpP9zU17eOtMFbE2rZgGGJMTtuKZOFoVPjwKafwtbmfc0T4liO8gnBy4AEsUOnzpvNwAxw6UXJ6Po/RCe1zEsIbHWdDuF/ELXpw987cQtmOUx+FFMZYnfAKRPWD9BQnEWrMHPw1z1yuR95FUyq98n2IdtpTt1zL7nK7gcQNf0kNPRprVWv8A7OzNxspmG18zrXPE3rSAGzbNpYHhLZmnpMmjvYvheVziGJzPIAOwXfbrV5XknoLUIxdZK+l9PP8Aom9j0b9YLgIZQoIYyZ1J196BItxeJEMxKG4MonSNTEU08DuBr2Ijk4B+U0BuyMbaUzrfYg+WU0i1JOKXnf5M2KiXZ6c1/wBHb7UpGAYhzaOdYKyDz0ka61VnZfidw3iO+usO7JOd2OoHmdNTVydueFNibCoq5ouoxXqFOonlNAu0HBrNnBm4MOlm7AXwiCATqPOrudqiRbFL+GSXIJfZ6xbDMWJYm4dSZOw61D+0vFG2lkK2RmZoaSNRHTfeiX2e24wg83P9qidrMNYxGIw9q8wOXvGChoM6Tm/D3qzXdJoL+OPQB4TjUWVzAlxp4GDZiNzJjQ1wx3bW3auqrWbgDBY9SYPPUbVmK4JhQQLAvZ8+6GRpuCPxFRMbbxFvEIjJ+qbYsslY338qyKlJVauRq9/O31JqVMkXJ8Eb9pMc+YQzCSToSPbQ0BxmOuhNLjySP3m9evlU/jpJu+QFDryqSAQDAneK2qiSbsYeEvaN+vqWR9nzm5hrTMdZbcltrjDc04so6D5UofZvlXC2gkwc+/KbjEj56U4EUGilZ9T0NtEVB2zus2NvLaa4IgaOQJAEwAdBQvhuIuYlDY7y4L1skoQ7DOB8SkzqRUntejjG4ogEjOdvz5UJ7Oo894pAYPIHM8jFDelyys9hh4tgrvd2379l0AMM0mT60w4TC5LeW1dYswkG4xYeZ9KHcZx+VbTABy6N4Y5qd/rXfAcVYYdLkeI+Wy+lJ1Y1W80dVyKpSzBXAXwhKFi90aECTM6iAdhU29jltiWt6nSQZ1HlSycUM7XQr94wEBAYGmpJjQxyqDw/G3rgJUcz4m1VdZBNLwwlu9N6vfyIyjJg7bXHW47XFyuYEEBhGk+2tHaC4G1fZ1a7c8IMgAQDppRmj4VycO9uBqxUXZHteVlZTNgYN7Q/+HuRucoHqXUD60u8Px+HuTbxbFb1s5RnLkEeQXam+7hxcBRtjv7a/hVR8esvZdWUarD59zrr4jz/AM6coXULrmLTUXVSfIsnANglIIKGOpu/jRjib2ruW4yqMw0KvcWQPQUncHvXb+FOIF1RkWWUhR/yxU7E8bZ8IC9w/wAqqAIA6ldR71Ma8JaoahDRxt9F/YTNu2uwY+l9/uNBuK4y1ZUk/pEnRf8AWGIn0nagLcVVtrjj/wDNA+tLuIxT38QiF2Zc4AzGYkwTpVlNN2QKpTaW/wBF+B57M4Fr9zO37NTt1PKn/CrEabVD4dg0s2lRBAUCp1nempK0GhHCwtNPzXqDuz4/XYr/AHo/pFLGGvO3EbauZy37uX/DBimbs6367Ff70f0ilMcTX/SSPcyottr0nYQubU+dKW+xoVH3YrnL1Y/cV4ithQX/AHjA6TBOp5bVXPanthZa2ubxEEMVmRHIH741oZ267YfpFzLblbafC3UmAcw8/wAKru88HOWz6wQQem+h8utcqMc2d7j7gpKzG1O2dxmyWTltzIWcqnQ6eTEnQ9a34DiFtXWu3wGaMwWC7DUEggRJjLrPLmKSWuT8Jy6zH3a867WcZAGbMTmnQkQI5R6/QUV2asyyVtEXv2e7TLd8Fu1kYjNChcwX+IgE+Z9BWnG7PeFbvelsrEREbjpvoJpF+zG+r3Ge5dLXFGW2rGdDlB2E6wBH8pp97SYqFyzIVZ85iNdBpG3vSjwqdaE48HqJ+0Vlw0muVvnoV7i7ma4xnmRQnjboGDW5zZMlzMRuTplHSDU9N5PPX50vWrZvs2oALEyfOi7u7EcFC0r8kXT9mdorhLAO4Qn5uTTnFKP2fWO7w9pDqRZGvLefxptBoVF3V/N/c12Ur2iMYzEuzQO9fQT1O8UD4cWS4jwWTM0aEAx0NGOPknE4kowJ7xjkPOGM+1CrgLW1JJVdTlB2Mcveqyhv5g1LUYOO3BcawmUqzKfCNMmYg6+woZjsYGfMrZba+DQ/w/3ovhbYuXbTMd8LIHmARS9wuz3jXEcQkSfbpQ1Gy6DNllGngRu37aNh37tyYZXY7DZteUUUOGvIxDaiZOwUnl6ilmxdKglCoWdNIMAaUVTHXBbGoYEaq2sCgykpPkLtaB7D4y7cdM2UIDEDfQEj60ZmhPC2t6ZVOYgeg01opQ8Ns9Lagam5tNZWtZTIM3sjX5/dSnxrCDJeEf7JFjnECm3C6uKB9obUd90hR/00/hfA0I4uL0kuH5K84pjGw5OH0U+DXPICAAgH+apNzjJw73Dh8jW8Ro8qpBGWDHMUs9qSxxd4xPiH0UVtw/A3luWu9QhJOVvVdqRdGNJ5k+fx/bGzQV1GXOxzxpyi0QIkMYJ/mgfSjPZzCHvbbMQSWB01/eqH2mwnhsZeSNOm5mj3ZKyGWwR5T/zU5h7OzF/aacUrLfT6FvJ8Ht+NdsPvFcU+H2rtbXxU3PZiVJd9dV6gvs3+2xf+/wD/AGCqz7XsDiXUnKpLy3mGOnvVkdknl8Uf/mGHyAFIHE+EnGYu7hwQCWeCZiRLaxr5UtsOQlDuZubt1/WV1jsUWkZpE8+caD6VK4f2fvXCpKwp3neKmcZ7H4nC+O7bhQ8RM5soDEr1WDv69KsWxdtIqSyjMBl1GsiRQMRWlG2U2MPSjK9xcHYy0yiFio+I+zK62tl1P8r6H51z7Xdor6Xu5TNaQAGYILA8wTy5ac6Zvsw7Q4i8y4cGFKG4zycx/WMpAM9AsKPPrVIKcY5rhJOnKWRIRV4LjMDeOa1dUjmqMQddAGA5mKaL+KvorJiVCvcWZRkZDlGzFJyuJEieY3Bq3cXwe1KvcHigrm3+LSfb8TSH2g4cUsBrjqpW/CkruFFxSjLz0JjyI1HKzrSzJWIlhITozTfDQRMXdy23bop+cQPrSha0Ijen+zj0w7lmtpcUyArjMvWY56D60o8Xxq4i8zpZSyp/dTbTn70SMmnaxhYKGWDvzLz+zsf6rZPPuE+qqaagdaVfs9EYWz/9Pa+qLTUN6pR2+L+47Lc+fOLZv0y8dpvP8s5r2/b/AFsdV+R5fOtOPXicTck6l2H1NdsNh2T9YxERtmkmPXnRJCbdmNXZ9ZtC5cEG0lxBA1giaEILSWxbEBu7Bk7yTtRrgtz9QzzKm2SWnUeRFB8LgVLm9I8I0BPyPt0pKabdhxTWWNzrw63kZe9DZWnReR6kmur8QVLjKyo4IIUnRgPUc6ifpgy3AS3hI1+86cq37PcNtuWFwMZBgjkaWdbLfRv4Et62QxcE1uBgzwTsfh0HOmiKUeCC5auJbKmNBJB1G802zRaWqYtX3R7FZXk1lFA3OuEaHHv91BOOXZZxBggenwijeD+NfzyoRx/9oRz/AMhvTdKWWDI7POiuuK9n7967euWrHeW88ZgdQQBMUx43E2u6tqbeUaKJ3Q7T60y9kMS5W+pQA96fITA5Vt2n4B+l2wlxiviBi2ADptqawsRXlUnlk7JMfppxa5ISuKLZtG2INzRttoI3n1rbsvlHdhRAn1/e60a4pwvD4W0isrt8QBO/wnpQrsbBtWIH5zVoYCo22Dxa7Rry/BZikRp0NdU+I+lad0CD6Vq1wrOYR58tq13LQSjG0l1XqBuwzSMQeuIf8KX+zRni1w/zXfpIo39nx/VXSdJvMfoKXexL5uIueven60PmVTuqfX1Df2n2FuJh0a6LKm40sZ1hJyiAdTEDQ68qpu/3wuC8shlkJpmyxouUNMEawdwVkGYNXL9pOCN4YQD93EBj6Aa0jWLdm5eIvT3ZducKCWJBYAaiY56UF6XY+68Y1FB6X4/E68U7O28Rh7V8vkdlXNnYnNOoBMEyCT61y7Fcaw+DuoM83oy+EfqxmYmOeviiT+NCr2Lu4rEXLDOyYe1mDIGAEISJJbQDQUH4jaw6/wDhmJK8+R15EgT6wBtFCjFyWVv5GrJxj34pfHj8C5eI9tQ02/mRy86M4rhtrinDyhOtwAqxJOW4uzb6CRqBGhNfPX6e0yZkn2151b/2Y8Ua1ZRLp5k+k7VMoKCVzoT7RtIrvtphb1m73NxcrrJbSB0BXyOtLKA8tfSvqHtJhcHiba/pNoOQPC0HMBzAZdYPSgr/AGeYFlPcKbDHWVJb0lLhP0irdokILDuCsjXsTay2LY6WbIj/AIB/amNd6i8P4Q1gEEhgFUSP5REkcvrUqaijpFFZrUoviuOtXrhHdlIYkEGCNevM1w70BFVnDBtiRyn76HPcJZswzfEQNoHWh1gO5gCepq9rC3Z5ixOC2RbsYm5aIZIjKwnXmJoNct3GOa54ZUQCIJHIwKn8Odk4a6hYPebyIOte27ee0WeFKL5ktPIztSOIqOCuhiKtZPkRMJYAnIM5Ow5E+XWu+HuoRLsykaaSB6EUPXGm3FvJqSGDSZHpRXhSNcK2vA2cyZMR70lUcnrzJzNjDw/iBuNaVmLkHSCIjXfnTHNLXCuCrh7odJYM0SJKjQyD70yU1hmnDQVrboyaysrKYsBOuEaHBH50oH2huxcnbn91G8GYdfzypb4yzPiBr8Op9eVFXgYxQjczgKYyyt51tZld8wzxMRuNdq4cR4hjbyk27bAQYKqSs+tE73ErrWyrOYIjaDUWxfu2raqt0hB+6DrrQJYanLVoeST0sK+A4NiWZ2xveFAPD4jv6UV4BaW26oEZRoQGnmeU8qKHGZtyxP8ANrQ50K4hXzaSBz9hUwpONXOnpy4Bqk4PD9moK99+PQsS0ZEc654u5CMein7qyw0rPzqPxZ/1FwjcIx/6TWhcyZK2ov8AYXE3Hw9xi0lSdx/KDr50N7E4ApihcDB0ZbniHU8iORqZ2JfLgLx6Z/6BQP7PGY4oJJCm27EA8xEH61DejFIx1p2G3tvdKvhema4T6C2T+AqqOKPFl/MR8zVudrME9xVAIZwr5J0nMuUz561VfGcKyKVdCCpkgjp+FVehOIbdeN/I07Y9mbmGt2MSstav2bfefyuVBIaORMwfbpSejEmACZ5Cvp7h2HW5hrKOqspsoCpEg+EcqUcXwXB4e7cuWbSBi0ggfAFEMEHKXzSR0I5VGfKjXTvuV1wTs+Qou3xBGynl5mmbsrj7dy+BmBUbCfiYch/KOvXQTrC32lxNy4SGclSYCiACfOAJ95rbs7b7k5zuNqVcXJ5psb7ZRWWCLpw+Mtpq2XOdzp7UStY5W2OvlvVIY3iTs0lj+egrth+P3oyB2E880AAbknl61OQDnLnxnFbiDwWbtw+QtqP/ANjrPsah4fiyXGKOj2bp2S4pXNp/s21Rj5KxpW7M8aw1vw281x+bLbZyx/xtBP3U52cctxcr25B3Vu7+ozmoTcWS0pI+eMYhUlGhYOrfvAc1rirmABGSdhzHnVg/ax2UW3GLtT4mCuDqZjwljzMAjNz03Opri8CFAAjqenpRd0LSSjeI9OjW8LYGbLbZpAIknSahniJYXB3w2jKV3NTuOYr9RhgZAVS06axA0FcuA4J7t7wpkzbM0bEch1jlSFZXdy1rg+w+crJGdRExoRUmyqB0EMhJ1JGlF8b2UOHzOTnUiJ2YDrUC1jO7ULcUXlJ8LfvL/eg93Y6XmGuCXbgcLm8BfUA6Uz0pcHsqt63DNlI0BHPzpspjDRSTtzEq2jVz2ayvKymAJ1wakuoXeaL4fsrZ3aSTuZOtD+Cib6ep/pNNztlBJ5UanG+o9hfA+os4/hNoOFUVOPZvDndazCqXuSes0a1olhkBnsxh/wCD61HxnZqxl0Q+xpiI1rS4oI1mucdCRVwcp4W5aH8K58YvG3auON1RiJ20EipvFMOiNKmSTqN9KF9pLn+p3+otsPYiui9BStG17A/hmJs3MDiLtpe7lXNxOQbJrl8jpSt9m6/66PKy/wB60V7E4wWsBiLjKHCs0qdmGVZHyqd2Y4MiYv8ASMOc2HuWWynmjEiUbzGvyrmLxjeUH5E77QBGGLbEQAf8Tr/alPD9o07rLjRmtnwd6B4lBH73Mjz+hpn+0q5GFQfxXV+gY/hVU8TfNavqP3UVvqaiWxWUc2JS8i82xIt4bMp1W2Ap9dEP1FV9xC/m8I+ECNT+6BEk+epJ6zTnx9ScGsdLftAkfUCq34nd3Reen596pIfirIGlO9fPEIohR+Pv+dq9damvbCKB+fztUDFPA9agvciXHk/OuNySQOX31iGT7V3FsbzXHEnhfErllwbUFtvFOUewIk/Snbs3xDiGKJjFEKNyllHjyCkQB66mq+N4DRQPMtsPUc/SimAS7iWCXr7LaUE5WZxbVRuSlsgdBGgkgVzVyYss9yro2HxeKw11X01dbV3y/VyVLA6giKqftPwm5h8QcK5GYwUI2ZSdG9ND8iKsXDcFwItqO4ABGlv9ETvrkbkBpYDzIXzNb4jsxauqItXcOiQVF/LlUjnaYOxQEwCh8J3ABFCTSLThmEXitjuu7VnDZbfPQyego/2b7U27ci+ADpDgeEQNNOtLfa98uKcXFKjTKY3UD4k5EEzqNKh4nBB7a91cExJPlvHrQKmslcBrGV0OGN7Zd7b7sqGXUfCdp33oVwtwxKtqCZhdI/tWnZLHFAVYrdjxAFRAjcA9TRq9w1buc2A9s3CDnGmX+IQaWqNQepEpXZOwt9Xa3D5ip1lY6x60aoNh+HJauoIJyqArHYsdyKM0zhpZotiuIeqPK9rKymQBN4H+3t+p/pNMPF70AL11NLvBP26ep/pNEsa2ZyZ8qPT2HsK+4+pN4RaJltuVEch61D4bbbuxB0qXlPOfnV0NGFdRXmmuleOo6GvdJ2+lccQMddSD1I6c/alHjvEe4w7XCsxlBU8wSAR7iae2ZRMwOdJXbXDLeXuv44gjkSfCT5A70NqzBV03B24C9icEljhuINozbusHTqA5Xwn02of9mOPcYq5aDHIbeZkO0ggSOh1rt2f4fcucNvYZ2y3FxDhVPMoQ2QesSKE/Zav/AMSvyCCtoj08SyPnU8BSMX2qfkNX2pvAsKJiWaY02AAnrqaq63czX71r+O1l9wJ/Grf7Q8UtfpC4TED9Tdt6tzRyxyMDy/PnVS8Z4NfwXEGW6pgPIYbMh0DDyj5a10tiacb4hzXK3QuftJdyYI+iD7j+FVcplp5zA/vVoduLc4aOQdJ9NvvIquMLZCuc2yST7f5wPegyeth6K0POJCDHT76AYy5JoxiLk2853Yml9jJqYkNanSzvXlh81xk/P51r3YUOvXmVs6NlPPQHTprU2udcNmwFGpjmfz+eVdLHEcmlpSozAswnvGjkp5EzoQM2u4oEvGSf2qyD/BofcHf6UWM5AQpVTG+/ijfpoai7W5KQ28P7Yd0Nz3jQAqkDMTsLlyPBbXfIuvMsSSA3cL48t6yvflLitJhgCzADxPlYFVQmYBiFiTuKpS9oCfL3JbkPWT8hRi3xh7RW2rEsFXMQSMzchI1CruYhixgRII7ImtCykWdxPsnZe2rYRFtXELMLTHwQ8ZgoJ8ExIjwyT1mq9udisYgZzby7tkzD5HzqyeymCuG0rXLzqTrC5QROp01Ueig+bNvRjjGDuGy3dkMwU77kR+8OfqPlS1TMtYlKtPMroprs+36w2VUMxE5TplI31p7s5wqtlIbYw0rSBb4XesXS3fAZ5DMPij0py4VhmsLLs5kDlIMcwOtKYmV5aPcDllbUJ27bsVZyFg6KOdTJqL+lIzCOZBG/TY1JprCq0WJ1lZns1leV7TIIkcMuZbqnpP8ASRU5moXhfjH55UVw6ZnUdSKPT2HcL4fiMWEMIo12rrm8jWwrxmAEkwKsOGlwmNq8uSIJIFR3xmYEWxm/m2X/ADrYYSRLsWMbbD5Vxxzvvm+GW5dB86E/6BCFnOpYQY5A9PSmIrK6VHxT9djp86rJLc4qjtXmw9hYJF39IBJ6lFgN7gKfnUvsphkvYk8QswBetMl5R+7eVlkx0YCfbzo12j4Wt8NaYwpjWNm0Kkfd70g/ZBeZcbiLJbwFWkeavlDeR1qvAUjBxqS5Ev7Qbn+ukfw20H0zfjXHsvx4cSw7YK+4XFW1PcXW/fTmjHqNNekHkai9ur04vEtqI010+FAPwpD4PeK3bZDFTnWCN5zCKs13bAcK/wCScvM+kO0BX9GvFhp3ZPyiD84NVTxy9kBUb3HJ9gdPmfup9+06636MiqwBe5kYTBaQQIPlP3VXObvcQ9w/Any8Oij3MUGe9zQia48xlt/wLr67nWgtvUzRLGPCFj8Tz8qh4VPDJrokM44gxQ2+eu1S77UOutmMCrpFTfh1gXLgzfCNW9Bqf7e9O/A+GnFFhsSCR0kCR7cqWcLhsqgDdzr6DWPqPlTv2dvi0WJMKqEnXkBJ9dBtQ6jLRE3F4Zla2HEHOC3ll1A++tOC+PEMzevp1/D5Ue7ScXtXr1uLZH6tGZ+r+INI6FY186H4TAMrm8ql0XS4VBIAOzGNhJk9PTWpTdtSM8c1rlj9nMW10K7SlphK253HI3CPiJH7vwjaDuX7h11IAyrHkBVf8DP+r2wN1UKfVdPrE+4orgMeyHUmKUjUaka6pxcLLYncb7P93e7+yqFXEOGGxnceVCuIXiukzJEnaNdadcDiRcXKdQRSjxngbG6ATmtzIAIlo1IgGSRz0iqV6Sfeiv6M2vRysD2sQrXv1ZBSY06jU/fRehd3Fi7iAVXKohVWIgAf3midOwpdnCKtwueejWVWpOS2vZHs1leVlSEN8O0MKNcJuKLksQAATrQFd6N8CwAuBmcbHTWiRdkaGDV4N+YaOPLfsl0/ibRfbrWq20Jm5cDnpyHsK6/oifwg+uv311RANhHpVrjlj3vBEKpPtA+teWnYqNANOZ/tWwNQH4klpBmOsaKNSa7MdYmWZI1aInYdD50KxlxWBtoGdtdZMDzr2xh7l8kuSiTOQb69aIWsKEOVdARPy3/Cou2dYCJw8W0ILZu838jyjz/tSXwXgf6Pxa7cAhL1ljHRw6i4PfRv+KrKu2SZWZ5ifz1oNjgFzXI/dJ0Gsga/cPlVVcHVWl1+orbttcGKwt7EKP1lhmt3I52y0W39tifPyqsOEtN+z/vbf9Yp44bx1cLdD3Rms3T3d5TsUfRp9N6D8U7OnB8StWgc1prtp7L8mttcGXXqNj6VdaaCuEalHPxbLg7YAMSuUMVUlZEkMdRHnoKQcRhcoFldzBY/d+J96duK4gHEHXTOB7TFKGOu92j3j8bswX3JGnoPvFKKV5M06kcsY9Bc4vczXMi/Cug9q1xzhFCzrGte4ZAs3H2XrzJ2H56UHxWIa4xNGSFmcr1zNUjC2I1Ne4bD8zXeatcg74Uw2Y+1ERdJtXIMTCz5sZPp4VYe9C7B3NN+F4fb/wBFlmI725dzoP3iqMLZjy8R+lCkTEVOJ4ZrWIswAQUT4hOYGSZnf4qm4niKYXFtaDMkZYYH+JRIaOWpHSN6b+Ldn+8fDMtpmZcPaJefDosRG00IwPZ83Me+KN1YWDGUSpAAysrbGOdcqyjvuBr0YTVpbhHg/GURdUEHc24ynocuw/4Y9KNpiUcSjAj6j1B1HvUTiLJcksAIGbMoGx3mPTnQMG20PauB11hlkEEaEHmp++qKNOvtpIXp47E4LSazw+qHbCcZ7oov8R2/t5yRpIqYmMtjOMrBACYFxwug/dAIgeW3lSK+JbwsRmKHMNgTBBjprETpv8+nFsYuIKFQ2UCSGkazsQekfWiLD1U1FfMdftjCulKtvbaOzJPDbqs6MilQdYJmNOtH6XuG/GvrTBTNdaroeZwLvGT8z2vKysoA8YKcOB2ctlfPX50nLuI/M094dYVR0Aq6saWC8D6nYCtL10IJYgDqaF8Q42qHKg7y50Gw9f7VGw/Crl0h8Sx8kB0965scsdzxC5eOXDrC83P4VJ4VwtUlj4nkgk+vKp1lAohRAHIaVpYbVx/MPqorjjqqw581+4/517e5Hofv0qHicaisniEyQQNTBHQecVu+JLghLbGRufCPrrVkyCVcMQfb5/50q9plcBktwGJzLO2pG/lING3717clkUROgJOnmdBS+ly41wM5LAfSfwmKrMq45k0U59pvD+4uLAGW4S4A5RAYemZtPKifZO4OIYW1auMBfwF1Lttju1nOM6e0CPQUc+0jgveLdgaqDft+ghcQg/6X96W+wuDFu3cxB3b9WvoIZvmcv/KarOfduCw1PLPskhh4rjQDO5BmOZ1oHxS5muZRqq6DoTzPz+6vTca5eXLJgkx1OU5fk2U+1DeP4sWl7tfjI8Rnby9evy60tSV2aGJeoK4he7xsinwruep5n05D0rS3Y5AVrg7ZOw9T/nWuL4iieFDJ5mmkmJEi7cA0riXqFaus2wnzrvbcTHxN/wBI9+ddlICeHACy2gn8gUW7M2mxN+4B8K24A5Dxr/3oJbwz3SBPhHPkPSmjgFnKe7tSA0B21BYdPShy0JQ83+JMLVmzaVmUJBeNIEjQjnpUfAcM3e4y2lYRBOpHVp50w3nt2EW2ACFUAKBrt150FxVpbzDwy7aAEj7j0pNyu3YBJPO2Ae0d21cW5btuJyn4Rp6TsKidguI2sPgxbYZrhLSAJiep86b/AP8AyVn/AGkkxLKIH3Ut47hPdXCLalVnltG4k84qsbxhkZLd1Y74mxZcZrTAQAWkiB19NYHvQlQG/MEV3uI25y6zsNd+fyrQ2wa1cDKo4Nt3V9DzvtRU4VbRVnbUkcNDC4nPxa8oEfX/ADpkpb4dci6incn8z9aYpq9dpy0JwV8jvzNq8ryaygjptZYKyk7Agn50ZuX72J+GLVqdWJgn3/tQ3htrPdRZIk7jQ6AnQ+1M6cKtblMx/nJY/WoZqYF/xvr+CNgThrGisGbqBmb/AKdqm/pjt8Flj5vCD66/Su6IF2AHpXSfOpQ2yIEvtu6J/hUsfm2n0rROHAuc7M8qDqdNDB0EDpRAMOo+dc7h/WLHRvwNWsRc1vWFRDlUCIOg6Gak3LgUZmMCuOMxSKhLMAIjffyFArd18QwEiFj0Hn61Oxx1a495siaLJPsTzophcGqhkj1PUEf96ywiW2ULzBnzI1n763u4tFYSd9DofUfjXXS3OFLtRbK2c4Us9h80b5lAK3FjnNskgdYpI41hlsWxZsghBOWd9STr86szjd9RLCDmX1EjSZ9CNPKk/EIjMAwnzpara1kM4en33N9BPuMcLbUhSbl2cpAnKNp9STFLdzhbkl7vXQEhZ/xMxhfTfypu7WcSeygnceC3bXnuWLkakSTpt1PKq2xV69cbNcbXz2HkBsBRaFNtXQtXqXk9Q1icAXEd9bC/woxj3aCT61D/ANCMPh7o+rOfwoUbI/y/PKsFuNjHppTPZsBmQbHCXPxOsdF0FEuH8KWcoid9Y++lvCYrxBbgzA6SNGHusEj1o3b4eV1t3WHkx+5oMfL3oE7rRlrDAuB2BIA6CmTgnC2kBBvzkbDfbSkbDWHkBxd155gV+Y0pz4FhmBABKqSNObevQUvLQlDnj7aNmVtMoUHX+Xeg7YBcvenw93oCkzr08+tFMTbdi7pkIEAmNWI032rhjMXltGDvuWAA86yqkZZm48QE97i7w/ixUk/rLrZh4ST4vQ1LfjL3AZtZDMEHMfXUio1/Ad3kuhSbckEg6r0YD1oRieOXzcUQw6aRuYmNqPSjJxs9yt0o5mTMU4LTp5x1riKxjJk71pcJgx+Zr0UYqnBR5Hkas3XquXNnvDTmvqfOPaDTVFL3BLDAhhtOX25/WB7GmClJSTbXI16FNwgm+P8Ah7FZXle1AUmcDP69PU/0mnCaTuCD9enqf6TTia5mngfdvr+DzPXqt5V5Wxiqjp6LlROJY4WijEE7iB6VrxDiSWhr8UaD8T5UCtZ8Q4zTBMTGnMwPlUOXmWSJSNdxL6iFHrAH96M8M8KlY2YjoTrufaK3w2HCDKogCvLKjO4jfK30j/21OpGhvi20B5qQfbY/Sa2xIldtRqI8q3KTpyrWxqsHcaH2/wAo+dWs2QI3a/FnvlQaDw7ecHX2Me1LNvFot1nuOAg3/wAC7wNySZH/AHo120wbDEEx4VZWB1By6cxyGoIPIGq27R41LlwpbP6tSYJgEyZk+UzA/vQaVB1J24DtWtGjRT4taEbtPxk4i+7gFUJOVSdhy96A3GrrdI2majXCK1bKKsjCV27s5k1vh8MbmaI8KlzJA0WJgE6nXYamuZPlWd50/PpQ2GRqydTPp/c1OwXEXtwNCo5E7eh3FQrYkgHrXQ2oP9vzr7VVxUtGWu0NnCeL2SdbhtH+YGPmunzinvszj8ObyL3qsxOwJJ011jl5mqatDWrI+z7D5IuOjZHJth13RoDZgDvGnlBI3papQik2mdGbbsO/Flvdw4spmDEksrqCOcqPWq/4liMRcvW0YHNlBgkwZ0BYHQEa1YOGW5ZuBWKBiJzyuS6k/FHJq6ccwdu4ge3bsuSAAzbj5e9ZmVJu6KyjdX4g/hd091laCMpVgBqY3y+VROLgW7aqpBVtjzhYMdeYqKMScP3i27ZUr4mCgsFkbrPvtQyzeLqGM6gGG3APKmsHRUqqb4Gb7QrKOH046fk6VjtsAAT6k68hGw9+tegfmQPqdKm8FwwuOzuYS2ssV+S7+5mtSvNRV+Rh4WnnmlzNcLw9zcRkz5EPjMeHRY08p1o5NTV4kCr2wDGXRuvrUGszDSzJ87m9Xio2S2sezWV5WU0Lk7gf7e36n+k05UmcC/b2/U/0mnKaqzUwHu31PTQri/Flt+FdXj2Hr51x4vxnLKWzJ5tyHkPOonCuFm547mi/Vv8AKqvUfSNeHcPe8xdyY5k7nyFHrtoIi5RAVl094P31JWAABoK4Y5Ztt1g/TX8Khom5KArmwi4p6gr+I/GtrZkA9RPzrTG/DP8ACwP11+hNWRUliuI0cjqJ+Wh/CsuX1X4mA/PSq1+0btwqg2MM3i1DuPPQqv4n2okU5aIq2lqwX9q/apLjdxZgqmjuP3j/AAg/wg/M/WqMTiSa3xd8sTUJ6ZSyqyF28zuzYtWtaVgqtybHpNeVsorYGNq4kwKOtdrR5HUV5bSdtDTN2S7KXcZeVARbXdnImAN4HM9KhtLVlHd6I27L9nHxlwJbjQSxYEhR1JEH0E60+9vT+g4bCpYEBboA/wCUzv1J19acuB8Fs4S13dkQN2Y6sx6sfw2HICgH2gcOF+yBJLKSVAjUxFKV53XkVasjv2cxqYu0ovJldDMGCbbHTMsbo3MeXUV7iey9lbgu/s3QT8bZCY0JUaR51VfZPHth8TOucSCCYleaiesbeVXRwrGDF2FIJtMQCNiUJ/dbcFTH/ahOPaLTxL6l4TUtJCHgu01i5cvoVi6Q4zrqGyjwwY0B8+tQ1r3F4W8uKxD31yXJFsDKACqw2ZY+IMSNf5a2RZNPYOnlhme7POe1KidXs1tH7m7JpJEj6fnf5UxcHuJYQd4INyczaaA7Az0095oFiCoE/wAIkzofTxRE+ER5nzrLbLyYyupzaghvLlSuOrWtFcRj2fQce9y0/I1XHUhu7CsDEsI5dI8qi1mFOS2QGEOdgBEeXSvKphmnFtDWI3XQ9rK8rKYFybwP9vb9T/SaJ8U4tm8NuQOZgyfTy86X7R16UycK4Vs7j0U/eaiWhq4D3b6+iOXCeEZoe4DHIdf8qYQK0uXQokkADmTAodiOP21Byy58tB8zVboe1Cs+R+n960vMApzQB5kCgwxWKu/Agtjqd/rr8hXW1wUkzecufXT57/dXZicpva4qFRVVczQBud/lW7DEXBqAinlMfhNduF2QqaKAQzDTfRjzis43xEYfD3bxghEJg8zsvzJArk7kNaiD287RphrfdWmm86yzT+zB5D+Y/QfSm8Ziix3qVxnHtduM7GSxJJ9aFMacisqsLTeZmrmuZblXprWoZyRgFZFZXs1BY8qTZtFtvz86jlgN/lWty8SI2HT+/Wouda4QGKVdEgt/EZyj06n6etWh9krAXsjEF2tO4IPIMqn8KqLDLqKt77L8G9nH3Uu2ytz9EDKTsbZ7orl6glmJPXTlQq3gIiu8izmpM+0pB+jhlu93cUlkOaJgeIecginMneq++1HDG7+jBQCwdyF/i0Gkn0parbLqDnxK+/Q/ALhdlvzMEjKRv6yacsC2Kwj276g3bLBcy2x/HvI1gDeknFhrdzvsoEH4TqFI0gimvs9xw4hTlTuzZQZnQ6MSTE9Nj9aDacpJx/wFGSgnKXBDlx3hgx1sX8OZuoCoBMZgDqjToGB2Om/SlaxbOYhgQRuNjPTY67/Ku/BOKNh7uZdVYjMvUf8A9DkadMfwe1iU76yFztrIEZ45N/N5+x8tdd3RmTkjjF2kV3luuZVnabiuR0tA6wWIjYahR88x9hRLhlgMthncDwlDOgOX4ZjmZpPxdh7l97l0G00nwuIYAeEAjkwAiKmcE4obYdd4/A6e9ZmIcZXNOnFU4qI88IZACMxYgkCeU/jRGKTuy/Fc92GGXMSQJ0k7U412DTyu/MVr7oyKysmspwDckcP/AGqf4hTwtZWUOe5rez/dPr6IWu0Pxr6Vw4B+2HqPur2sofA0Rqs7n0r015WVC2I4nLhmz/42++gn2lf+XX/+D/1FrysokNkQ9z5yxO9RWrKym0K8T29y9K0rKyuZKMNajesrKqSjjXvL5/hWVlULkzAfEK+i8D/4+x/9tb/10r2sqtbZHUt2HDSp2v8Aitep+8V5WUlivdsXe7EPtX+wu/42qL9nP7LGf4bP33K8rKtgtviBq+5n0f2DKbirB7Dfsbn+9b7lrysrUqGR7J94Vn9p/wD5je/4P6FpWt73fSsrKyqnjf7xNae7DPZX9va/PI1YlZWUXDbPqJ1/EZWVlZTIE//Z" alt="">-->
+<!--                            </div>-->
+<!--                            <div class="ms-4">-->
+<!--                                <h4 class="text-secondary">Tony Joshy</h4>-->
+
+<!--                                <div class="d-flex pe-5">-->
+<!--                                    <i class="fas fa-star me-1 text-primary"></i>-->
+<!--                                    <i class="fas fa-star me-1 text-primary"></i>-->
+<!--                                    <i class="fas fa-star me-1 text-primary"></i>-->
+<!--                                    <i class="fas fa-star me-1 text-primary"></i>-->
+<!--                                    <i class="fas fa-star me-1 text-primary"></i>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="border-top mt-4 pt-3">-->
+<!--                            <p class="mb-0">The place is perfect and the cleanliness is very good perfect for students with free wifi</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="testimonial-item border p-4">-->
+<!--                        <div class=" d-flex align-items-center">-->
+<!--                            <div class="">-->
+<!--                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA2VgDh5UqyO2gUrr0gOyezU1CzRgNzHU9IA&s" alt="" style="height:100px">-->
+<!--                            </div>-->
+<!--                            <div class="ms-4">-->
+<!--                                <h4 class="text-secondary">Sreeraj Kumar</h4>-->
+<!--                               <p class="m-0 pb-3">Profession</p>-->
+<!--                                <div class="d-flex pe-5">-->
+<!--                                    <i class="fas fa-star me-1 text-primary"></i>-->
+<!--                                    <i class="fas fa-star me-1 text-primary"></i>-->
+<!--                                    <i class="fas fa-star me-1 text-primary"></i>-->
+<!--                                    <i class="fas fa-star me-1 text-primary"></i>-->
+<!--                                    <i class="fas fa-star me-1 text-primary"></i>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="border-top mt-4 pt-3">-->
+<!--                            <p class="mb-0">It's amazing experience to live in GoodStay Boys Hostel. The owner is very good in Nature. They take care of all the students and staff of hostel. </p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; Testimonial End &ndash;&gt;-->
+
+
+
+
+
+
+
+<!--     &lt;!&ndash; Blog Start &ndash;&gt;-->
+<!--    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">-->
+<!--        <div class="container py-5">-->
+<!--            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">-->
+<!--                <h5 class="fw-bold text-primary text-uppercase">Latest Blog</h5>-->
+<!--                <h1 class="mb-0">Read The Latest Articles from Our Blog Post</h1>-->
+<!--            </div>-->
+<!--            <div class="row g-5">-->
+<!--                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">-->
+<!--                    <div class="blog-item bg-light rounded overflow-hidden">-->
+<!--                        <div class="blog-img position-relative overflow-hidden">-->
+<!--                            <img class="img-fluid" src="{% static 'img/blog-1.jpg' %}" alt="">-->
+<!--                            <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="">Web Design</a>-->
+<!--                        </div>-->
+<!--                        <div class="p-4">-->
+<!--                            <div class="d-flex mb-3">-->
+<!--                                <small class="me-3"><i class="far fa-user text-primary me-2"></i>John Doe</small>-->
+<!--                                <small><i class="far fa-calendar-alt text-primary me-2"></i>01 Jan, 2045</small>-->
+<!--                            </div>-->
+<!--                            <h4 class="mb-3">How to build a website</h4>-->
+<!--                            <p>Dolor et eos labore stet justo sed est sed sed sed dolor stet amet</p>-->
+<!--                            <a class="text-uppercase" href="">Read More <i class="bi bi-arrow-right"></i></a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">-->
+<!--                    <div class="blog-item bg-light rounded overflow-hidden">-->
+<!--                        <div class="blog-img position-relative overflow-hidden">-->
+<!--                            <img class="img-fluid" src="{% static 'img/blog-2.jpg' %}" alt="">-->
+<!--                            <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="">Web Design</a>-->
+<!--                        </div>-->
+<!--                        <div class="p-4">-->
+<!--                            <div class="d-flex mb-3">-->
+<!--                                <small class="me-3"><i class="far fa-user text-primary me-2"></i>John Doe</small>-->
+<!--                                <small><i class="far fa-calendar-alt text-primary me-2"></i>01 Jan, 2045</small>-->
+<!--                            </div>-->
+<!--                            <h4 class="mb-3">How to build a website</h4>-->
+<!--                            <p>Dolor et eos labore stet justo sed est sed sed sed dolor stet amet</p>-->
+<!--                            <a class="text-uppercase" href="">Read More <i class="bi bi-arrow-right"></i></a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">-->
+<!--                    <div class="blog-item bg-light rounded overflow-hidden">-->
+<!--                        <div class="blog-img position-relative overflow-hidden">-->
+<!--                            <img class="img-fluid" src="{% static 'img/blog-3.jpg' %}" alt="">-->
+<!--                            <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="">Web Design</a>-->
+<!--                        </div>-->
+<!--                        <div class="p-4">-->
+<!--                            <div class="d-flex mb-3">-->
+<!--                                <small class="me-3"><i class="far fa-user text-primary me-2"></i>John Doe</small>-->
+<!--                                <small><i class="far fa-calendar-alt text-primary me-2"></i>01 Jan, 2045</small>-->
+<!--                            </div>-->
+<!--                            <h4 class="mb-3">How to build a website</h4>-->
+<!--                            <p>Dolor et eos labore stet justo sed est sed sed sed dolor stet amet</p>-->
+<!--                            <a class="text-uppercase" href="">Read More <i class="bi bi-arrow-right"></i></a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; Blog Start &ndash;&gt;-->
+
+
+
+
+<!--    &lt;!&ndash; Features Start &ndash;&gt;-->
+<!--    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">-->
+<!--        <div class="container py-5">-->
+<!--            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">-->
+<!--                <h5 class="fw-bold text-primary text-uppercase">Why Choose Us</h5>-->
+<!--                <h1 class="mb-0">We Are Here to Grow Your Business Exponentially</h1>-->
+<!--            </div>-->
+<!--            <div class="row g-5">-->
+<!--                <div class="col-lg-4">-->
+<!--                    <div class="row g-5">-->
+<!--                        <div class="col-12 wow zoomIn" data-wow-delay="0.2s">-->
+<!--                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">-->
+<!--                                <i class="fa fa-cubes text-white"></i>-->
+<!--                            </div>-->
+<!--                            <h4>Best In Industry</h4>-->
+<!--                            <p class="mb-0">Magna sea eos sit dolor, ipsum amet lorem diam dolor eos et diam dolor</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-12 wow zoomIn" data-wow-delay="0.6s">-->
+<!--                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">-->
+<!--                                <i class="fa fa-award text-white"></i>-->
+<!--                            </div>-->
+<!--                            <h4>Award Winning</h4>-->
+<!--                            <p class="mb-0">Magna sea eos sit dolor, ipsum amet lorem diam dolor eos et diam dolor</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-4  wow zoomIn" data-wow-delay="0.9s" style="min-height: 350px;">-->
+<!--                    <div class="position-relative h-100">-->
+<!--                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="{% static 'img/feature.jpg' %}" style="object-fit: cover;">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-4">-->
+<!--                    <div class="row g-5">-->
+<!--                        <div class="col-12 wow zoomIn" data-wow-delay="0.4s">-->
+<!--                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">-->
+<!--                                <i class="fa fa-users-cog text-white"></i>-->
+<!--                            </div>-->
+<!--                            <h4>Professional Staff</h4>-->
+<!--                            <p class="mb-0">Magna sea eos sit dolor, ipsum amet lorem diam dolor eos et diam dolor</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-12 wow zoomIn" data-wow-delay="0.8s">-->
+<!--                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">-->
+<!--                                <i class="fa fa-phone-alt text-white"></i>-->
+<!--                            </div>-->
+<!--                            <h4>24/7 Support</h4>-->
+<!--                            <p class="mb-0">Magna sea eos sit dolor, ipsum amet lorem diam dolor eos et diam dolor</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; Features Start &ndash;&gt;-->
+
+
+<!--    &lt;!&ndash; Service Start &ndash;&gt;-->
+<!--    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">-->
+<!--        <div class="container py-5">-->
+<!--            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">-->
+<!--                <h5 class="fw-bold text-primary text-uppercase">Our Services</h5>-->
+<!--                <h1 class="mb-0">Custom IT Solutions for Your Successful Business</h1>-->
+<!--            </div>-->
+<!--            <div class="row g-5">-->
+<!--                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">-->
+<!--                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">-->
+<!--                        <div class="service-icon">-->
+<!--                            <i class="fa fa-shield-alt text-white"></i>-->
+<!--                        </div>-->
+<!--                        <h4 class="mb-3">Cyber Security</h4>-->
+<!--                        <p class="m-0">Amet justo dolor lorem kasd amet magna sea stet eos vero lorem ipsum dolore sed</p>-->
+<!--                        <a class="btn btn-lg btn-primary rounded" href="">-->
+<!--                            <i class="bi bi-arrow-right"></i>-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">-->
+<!--                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">-->
+<!--                        <div class="service-icon">-->
+<!--                            <i class="fa fa-chart-pie text-white"></i>-->
+<!--                        </div>-->
+<!--                        <h4 class="mb-3">Data Analytics</h4>-->
+<!--                        <p class="m-0">Amet justo dolor lorem kasd amet magna sea stet eos vero lorem ipsum dolore sed</p>-->
+<!--                        <a class="btn btn-lg btn-primary rounded" href="">-->
+<!--                            <i class="bi bi-arrow-right"></i>-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">-->
+<!--                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">-->
+<!--                        <div class="service-icon">-->
+<!--                            <i class="fa fa-code text-white"></i>-->
+<!--                        </div>-->
+<!--                        <h4 class="mb-3">Web Development</h4>-->
+<!--                        <p class="m-0">Amet justo dolor lorem kasd amet magna sea stet eos vero lorem ipsum dolore sed</p>-->
+<!--                        <a class="btn btn-lg btn-primary rounded" href="">-->
+<!--                            <i class="bi bi-arrow-right"></i>-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">-->
+<!--                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">-->
+<!--                        <div class="service-icon">-->
+<!--                            <i class="fab fa-android text-white"></i>-->
+<!--                        </div>-->
+<!--                        <h4 class="mb-3">Apps Development</h4>-->
+<!--                        <p class="m-0">Amet justo dolor lorem kasd amet magna sea stet eos vero lorem ipsum dolore sed</p>-->
+<!--                        <a class="btn btn-lg btn-primary rounded" href="">-->
+<!--                            <i class="bi bi-arrow-right"></i>-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">-->
+<!--                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">-->
+<!--                        <div class="service-icon">-->
+<!--                            <i class="fa fa-search text-white"></i>-->
+<!--                        </div>-->
+<!--                        <h4 class="mb-3">SEO Optimization</h4>-->
+<!--                        <p class="m-0">Amet justo dolor lorem kasd amet magna sea stet eos vero lorem ipsum dolore sed</p>-->
+<!--                        <a class="btn btn-lg btn-primary rounded" href="">-->
+<!--                            <i class="bi bi-arrow-right"></i>-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">-->
+<!--                    <div class="position-relative bg-primary rounded h-100 d-flex flex-column align-items-center justify-content-center text-center p-5">-->
+<!--                        <h3 class="text-white mb-3">Call Us For Quote</h3>-->
+<!--                        <p class="text-white mb-3">Clita ipsum magna kasd rebum at ipsum amet dolor justo dolor est magna stet eirmod</p>-->
+<!--                        <h2 class="text-white mb-0">+012 345 6789</h2>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; Service End &ndash;&gt;-->
+
+
+<!--    &lt;!&ndash; Pricing Plan Start &ndash;&gt;-->
+<!--    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">-->
+<!--        <div class="container py-5">-->
+<!--            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">-->
+<!--                <h5 class="fw-bold text-primary text-uppercase">Pricing Plans</h5>-->
+<!--                <h1 class="mb-0">We are Offering Competitive Prices for Our Clients</h1>-->
+<!--            </div>-->
+<!--            <div class="row g-0">-->
+<!--                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">-->
+<!--                    <div class="bg-light rounded">-->
+<!--                        <div class="border-bottom py-4 px-5 mb-4">-->
+<!--                            <h4 class="text-primary mb-1">Basic Plan</h4>-->
+<!--                            <small class="text-uppercase">For Small Size Business</small>-->
+<!--                        </div>-->
+<!--                        <div class="p-5 pt-0">-->
+<!--                            <h1 class="display-5 mb-3">-->
+<!--                                <small class="align-top" style="font-size: 22px; line-height: 45px;">$</small>49.00<small-->
+<!--                                    class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Month</small>-->
+<!--                            </h1>-->
+<!--                            <div class="d-flex justify-content-between mb-3"><span>HTML5 & CSS3</span><i class="fa fa-check text-primary pt-1"></i></div>-->
+<!--                            <div class="d-flex justify-content-between mb-3"><span>Bootstrap v5</span><i class="fa fa-check text-primary pt-1"></i></div>-->
+<!--                            <div class="d-flex justify-content-between mb-3"><span>Responsive Layout</span><i class="fa fa-times text-danger pt-1"></i></div>-->
+<!--                            <div class="d-flex justify-content-between mb-2"><span>Cross-browser Support</span><i class="fa fa-times text-danger pt-1"></i></div>-->
+<!--                            <a href="" class="btn btn-primary py-2 px-4 mt-4">Order Now</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">-->
+<!--                    <div class="bg-white rounded shadow position-relative" style="z-index: 1;">-->
+<!--                        <div class="border-bottom py-4 px-5 mb-4">-->
+<!--                            <h4 class="text-primary mb-1">Standard Plan</h4>-->
+<!--                            <small class="text-uppercase">For Medium Size Business</small>-->
+<!--                        </div>-->
+<!--                        <div class="p-5 pt-0">-->
+<!--                            <h1 class="display-5 mb-3">-->
+<!--                                <small class="align-top" style="font-size: 22px; line-height: 45px;">$</small>99.00<small-->
+<!--                                    class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Month</small>-->
+<!--                            </h1>-->
+<!--                            <div class="d-flex justify-content-between mb-3"><span>HTML5 & CSS3</span><i class="fa fa-check text-primary pt-1"></i></div>-->
+<!--                            <div class="d-flex justify-content-between mb-3"><span>Bootstrap v5</span><i class="fa fa-check text-primary pt-1"></i></div>-->
+<!--                            <div class="d-flex justify-content-between mb-3"><span>Responsive Layout</span><i class="fa fa-check text-primary pt-1"></i></div>-->
+<!--                            <div class="d-flex justify-content-between mb-2"><span>Cross-browser Support</span><i class="fa fa-times text-danger pt-1"></i></div>-->
+<!--                            <a href="" class="btn btn-primary py-2 px-4 mt-4">Order Now</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">-->
+<!--                    <div class="bg-light rounded">-->
+<!--                        <div class="border-bottom py-4 px-5 mb-4">-->
+<!--                            <h4 class="text-primary mb-1">Advanced Plan</h4>-->
+<!--                            <small class="text-uppercase">For Large Size Business</small>-->
+<!--                        </div>-->
+<!--                        <div class="p-5 pt-0">-->
+<!--                            <h1 class="display-5 mb-3">-->
+<!--                                <small class="align-top" style="font-size: 22px; line-height: 45px;">$</small>149.00<small-->
+<!--                                    class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Month</small>-->
+<!--                            </h1>-->
+<!--                            <div class="d-flex justify-content-between mb-3"><span>HTML5 & CSS3</span><i class="fa fa-check text-primary pt-1"></i></div>-->
+<!--                            <div class="d-flex justify-content-between mb-3"><span>Bootstrap v5</span><i class="fa fa-check text-primary pt-1"></i></div>-->
+<!--                            <div class="d-flex justify-content-between mb-3"><span>Responsive Layout</span><i class="fa fa-check text-primary pt-1"></i></div>-->
+<!--                            <div class="d-flex justify-content-between mb-2"><span>Cross-browser Support</span><i class="fa fa-check text-primary pt-1"></i></div>-->
+<!--                            <a href="" class="btn btn-primary py-2 px-4 mt-4">Order Now</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; Pricing Plan End &ndash;&gt;-->
+
+
+             <div class="contact-detail position-relative p-5">
+                    <div class="row g-5 mb-5 justify-content-center">
+                        <div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".3s">
+                            <div class="d-flex bg-light p-3 rounded">
+                                <div class="flex-shrink-0 btn-square bg-secondary rounded-circle" style="width: 64px; height: 64px;">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h4 class="text-primary">Address</h4>
+                                    <a href="https://goo.gl/maps/Zd4BCynmTb98ivUJ6" target="_blank" class="h5">2nd Stage, Indiranagar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".5s">
+                            <div class="d-flex bg-light p-3 rounded">
+                                <div class="flex-shrink-0 btn-square bg-secondary rounded-circle" style="width: 64px; height: 64px;">
+                                    <i class="fa fa-phone text-white"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h4 class="text-primary">Call Us</h4>
+                                    <a class="h5" href="tel:+0123456789" target="_blank">+91 9544035401</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".7s">
+                            <div class="d-flex bg-light p-3 rounded">
+                                <div class="flex-shrink-0 btn-square bg-secondary rounded-circle" style="width: 64px; height: 64px;">
+                                    <i class="fa fa-envelope text-white"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h4 class="text-primary">Email Us</h4>
+                                    <a class="h5" href="goodstay@gmail.com" target="_blank">goodstay@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-5">
+
+                        <div class="col-lg-6 wow fadeIn" data-wow-delay=".3s">
+                            <div class="p-5 h-100 rounded contact-map">
+                                <iframe class="rounded w-100 h-100" src=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d73981.64340025012!2d77.59889229910752!3d12.96025613147285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae16a6aa2204d3%3A0xd5d1a4aa99ce8eb8!2s2nd%20Stage%2C%20Stage%203%2C%20Indiranagar%2C%20Bengaluru%2C%20Karnataka%20560038!5e0!3m2!1sen!2sin!4v1720419383089!5m2!1sen!2sin"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5">
+                    <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s">
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-xl-12">
+                                    <input type="text" class="form-control bg-light border-0" placeholder="Your Name" style="height: 55px;">
+                                </div>
+                                <div class="col-12">
+                                    <input type="email" class="form-control bg-light border-0" placeholder="Your Email" style="height: 55px;">
+                                </div>
+
+                                <div class="col-12">
+                                    <textarea class="form-control bg-light border-0" rows="3" style="height:120px" placeholder="Message"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-dark w-100 py-3" type="submit">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+<!--                         &lt;!&ndash; Back to Top &ndash;&gt;-->
+<!--                         <div class="contact-detail position-relative p-5">-->
+<!--                    <div class="row g-5 mb-5 justify-content-center">-->
+<!--                        <div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".3s">-->
+<!--                            <div class="d-flex bg-light p-3 rounded">-->
+<!--                                <div class="flex-shrink-0 btn-square bg-secondary rounded-circle" style="width: 64px; height: 64px;">-->
+<!--                                    <i class="fas fa-map-marker-alt text-white"></i>-->
+<!--                                </div>-->
+<!--                                <div class="ms-3">-->
+<!--                                    <h4 class="text-primary">Address</h4>-->
+<!--                                    <a href="https://goo.gl/maps/Zd4BCynmTb98ivUJ6" target="_blank" class="h5">2nd Stage, Indiranagar</a>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".5s">-->
+<!--                            <div class="d-flex bg-light p-3 rounded">-->
+<!--                                <div class="flex-shrink-0 btn-square bg-secondary rounded-circle" style="width: 64px; height: 64px;">-->
+<!--                                    <i class="fa fa-phone text-white"></i>-->
+<!--                                </div>-->
+<!--                                <div class="ms-3">-->
+<!--                                    <h4 class="text-primary">Call Us</h4>-->
+<!--                                    <a class="h5" href="tel:+0123456789" target="_blank">+91 9682550020</a>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".7s">-->
+<!--                            <div class="d-flex bg-light p-3 rounded">-->
+<!--                                <div class="flex-shrink-0 btn-square bg-secondary rounded-circle" style="width: 64px; height: 64px;">-->
+<!--                                    <i class="fa fa-envelope text-white"></i>-->
+<!--                                </div>-->
+<!--                                <div class="ms-3">-->
+<!--                                    <h4 class="text-primary">Email Us</h4>-->
+<!--                                    <a class="h5" href="goodstay@gmail.com" target="_blank">goodstay@gmail.com</a>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                              <div class="row d-flex justify-content-center align-items-center h-50">-->
+<!--      <div class="col-12 col-md-8 col-lg-6 col-xl-5">-->
+<!--        <div class="card bg-dark text-white" style="border-radius: 1rem;">-->
+<!--          <div class="card-body p-5 text-center">-->
+
+<!--                    <div class="row g-5">-->
+<!--                        <div class="col-lg-6 wow fadeIn" data-wow-delay=".3s">-->
+<!--&lt;!&ndash;                             <div class="card bg-dark text-white" style="border-radius: 1rem;">&ndash;&gt;-->
+<!--                            <div class="p-5 h-100 rounded contact-map">-->
+<!--                                <iframe class="rounded w-100 h-100" src=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d73981.64340025012!2d77.59889229910752!3d12.96025613147285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae16a6aa2204d3%3A0xd5d1a4aa99ce8eb8!2s2nd%20Stage%2C%20Stage%203%2C%20Indiranagar%2C%20Bengaluru%2C%20Karnataka%20560038!5e0!3m2!1sen!2sin!4v1720419383089!5m2!1sen!2sin"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+<!--                        <div class="col-lg-6 wow fadeIn" data-wow-delay=".5s">-->
+<!--                            <div class="p-5 rounded contact-form">-->
+<!--                                <div class="mb-4">-->
+<!--                                    <input type="text" class="form-control border-0 py-3" placeholder="Your Name">-->
+<!--                                </div>-->
+<!--                                <div class="mb-4">-->
+<!--                                    <input type="email" class="form-control border-0 py-3" placeholder="Your Email">-->
+<!--                                </div>-->
+
+<!--                                <div class="mb-4">-->
+<!--                                    <textarea class="w-100 form-control border-0 py-3" rows="6" cols="10" placeholder="Message"></textarea>-->
+<!--                                </div>-->
+<!--                                <div class="text-start">-->
+<!--                                    <button class="btn bg-primary text-white py-3 px-5" type="button">Send Message</button>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+
+
+                         <!-- Footer Start -->
+         <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s">
+            <div class="container pt-5 pb-4">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <a href="index.html">
+                            <h1 class="text-white fw-bold d-block">Good<span class="text-secondary">Stay</span> </h1>
+                        </a>
+                        <p class="mt-4 text-light"> An inexpensive lodging facility for usually young travelers that typically has dormitory-style sleeping arrangements and  offers meals and planned activities</p>
+                        <div class="d-flex hightech-link">
+                            <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-facebook-f text-primary"></i></a>
+                            <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-twitter text-primary"></i></a>
+                            <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-instagram text-primary"></i></a>
+                            <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6";style="padding-left:1000px">
+                        <a href="#" class="h3 text-secondary">Short Link</a>
+                        <div class="mt-4 d-flex flex-column short-link">
+                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Home</a>
+                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>About us</a>
+                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Services</a>
+                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Gallery</a>
+                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Testimonials</a>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-3 col-md-6">
+                        <a href="#" class="h3 text-secondary">Contact Us</a>
+                        <div class="text-white mt-4 d-flex flex-column contact-link">
+                            <a href="#" class="pb-3 text-light border-bottom border-primary"><i class="fas fa-map-marker-alt text-secondary me-2"></i> 17thMain,2nd Stage,Indiranagar,Bengaluru,Karnataka</a>
+                            <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-phone-alt text-secondary me-2"></i> +91 9544035401</a>
+                            <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-envelope text-secondary me-2"></i> goodstay@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <a href="#" class="h3 text-secondary">Our Timings</a>
+                        <div class="mt-4 d-flex flex-column short-link">
+                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Mon-Sun:10:00 AM-07:00 PM</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+
+<!--                        <div class="col-lg-6 wow fadeIn" data-wow-delay=".5s">-->
+<!--                            <div class="p-5 rounded contact-form">-->
+<!--                                <div class="mb-4">-->
+<!--                                    <input type="text" class="form-control border-0 py-3" placeholder="Your Name">-->
+<!--                                </div>-->
+<!--                                <div class="mb-4">-->
+<!--                                    <input type="email" class="form-control border-0 py-3" placeholder="Your Email">-->
+<!--                                </div>-->
+
+<!--                                <div class="mb-4">-->
+<!--                                    <textarea class="w-100 form-control border-0 py-3" rows="6" cols="10" placeholder="Message"></textarea>-->
+<!--                                </div>-->
+<!--                                <div class="text-start">-->
+<!--                                    <button class="btn bg-primary text-white py-3 px-5" type="button">Send Message</button>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+        <!-- Contact End -->
+
+
+<!--    &lt;!&ndash; Quote Start &ndash;&gt;-->
+<!--    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">-->
+<!--        <div class="container py-5">-->
+<!--            <div class="row g-5">-->
+<!--                <div class="col-lg-7">-->
+<!--                    <div class="section-title position-relative pb-3 mb-5">-->
+<!--                        <h5 class="fw-bold text-primary text-uppercase">Request A Quote</h5>-->
+<!--                        <h1 class="mb-0">Need A Free Quote? Please Feel Free to Contact Us</h1>-->
+<!--                    </div>-->
+<!--                    <div class="row gx-3">-->
+<!--                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">-->
+<!--                            <h5 class="mb-4"><i class="fa fa-reply text-primary me-3"></i>Reply within 24 hours</h5>-->
+<!--                        </div>-->
+<!--                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">-->
+<!--                            <h5 class="mb-4"><i class="fa fa-phone-alt text-primary me-3"></i>24 hrs telephone support</h5>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <p class="mb-4">Eirmod sed tempor lorem ut dolores. Aliquyam sit sadipscing kasd ipsum. Dolor ea et dolore et at sea ea at dolor, justo ipsum duo rebum sea invidunt voluptua. Eos vero eos vero ea et dolore eirmod et. Dolores diam duo invidunt lorem. Elitr ut dolores magna sit. Sea dolore sanctus sed et. Takimata takimata sanctus sed.</p>-->
+<!--                    <div class="d-flex align-items-center mt-2 wow zoomIn" data-wow-delay="0.6s">-->
+<!--                        <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">-->
+<!--                            <i class="fa fa-phone-alt text-white"></i>-->
+<!--                        </div>-->
+<!--                        <div class="ps-4">-->
+<!--                            <h5 class="mb-2">Call to ask any question</h5>-->
+<!--                            <h4 class="text-primary mb-0">+012 345 6789</h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-5">-->
+<!--                    <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s">-->
+<!--                        <form>-->
+<!--                            <div class="row g-3">-->
+<!--                                <div class="col-xl-12">-->
+<!--                                    <input type="text" class="form-control bg-light border-0" placeholder="Your Name" style="height: 55px;">-->
+<!--                                </div>-->
+<!--                                <div class="col-12">-->
+<!--                                    <input type="email" class="form-control bg-light border-0" placeholder="Your Email" style="height: 55px;">-->
+<!--                                </div>-->
+<!--                                <div class="col-12">-->
+<!--                                    <select class="form-select bg-light border-0" style="height: 55px;">-->
+<!--                                        <option selected>Select A Service</option>-->
+<!--                                        <option value="1">Service 1</option>-->
+<!--                                        <option value="2">Service 2</option>-->
+<!--                                        <option value="3">Service 3</option>-->
+<!--                                    </select>-->
+<!--                                </div>-->
+<!--                                <div class="col-12">-->
+<!--                                    <textarea class="form-control bg-light border-0" rows="3" placeholder="Message"></textarea>-->
+<!--                                </div>-->
+<!--                                <div class="col-12">-->
+<!--                                    <button class="btn btn-dark w-100 py-3" type="submit">Request A Quote</button>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </form>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; Quote End &ndash;&gt;-->
+
+
+<!--    &lt;!&ndash; Testimonial Start &ndash;&gt;-->
+<!--    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">-->
+<!--        <div class="container py-5">-->
+<!--            <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 600px;">-->
+<!--                <h5 class="fw-bold text-primary text-uppercase">Testimonial</h5>-->
+<!--                <h1 class="mb-0">What Our Clients Say About Our Digital Services</h1>-->
+<!--            </div>-->
+<!--            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.6s">-->
+<!--                <div class="testimonial-item bg-light my-4">-->
+<!--                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">-->
+<!--                        <img class="img-fluid rounded" src="{% static 'img/testimonial-1.jpg' %}" style="width: 60px; height: 60px;" >-->
+<!--                        <div class="ps-4">-->
+<!--                            <h4 class="text-primary mb-1">Client Name</h4>-->
+<!--                            <small class="text-uppercase">Profession</small>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="pt-4 pb-5 px-5">-->
+<!--                        Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="testimonial-item bg-light my-4">-->
+<!--                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">-->
+<!--                        <img class="img-fluid rounded" src="{% static 'img/testimonial-2.jpg' %}" style="width: 60px; height: 60px;" >-->
+<!--                        <div class="ps-4">-->
+<!--                            <h4 class="text-primary mb-1">Client Name</h4>-->
+<!--                            <small class="text-uppercase">Profession</small>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="pt-4 pb-5 px-5">-->
+<!--                        Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="testimonial-item bg-light my-4">-->
+<!--                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">-->
+<!--                        <img class="img-fluid rounded" src="{% static 'img/testimonial-3.jpg' %}" style="width: 60px; height: 60px;" >-->
+<!--                        <div class="ps-4">-->
+<!--                            <h4 class="text-primary mb-1">Client Name</h4>-->
+<!--                            <small class="text-uppercase">Profession</small>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="pt-4 pb-5 px-5">-->
+<!--                        Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="testimonial-item bg-light my-4">-->
+<!--                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">-->
+<!--                        <img class="img-fluid rounded" src="{% static 'img/testimonial-4.jpg' %}" style="width: 60px; height: 60px;" >-->
+<!--                        <div class="ps-4">-->
+<!--                            <h4 class="text-primary mb-1">Client Name</h4>-->
+<!--                            <small class="text-uppercase">Profession</small>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="pt-4 pb-5 px-5">-->
+<!--                        Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; Testimonial End &ndash;&gt;-->
+
+
+<!--    &lt;!&ndash; Team Start &ndash;&gt;-->
+<!--    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">-->
+<!--        <div class="container py-5">-->
+<!--            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">-->
+<!--                <h5 class="fw-bold text-primary text-uppercase">Team Members</h5>-->
+<!--                <h1 class="mb-0">Professional Stuffs Ready to Help Your Business</h1>-->
+<!--            </div>-->
+<!--            <div class="row g-5">-->
+<!--                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">-->
+<!--                    <div class="team-item bg-light rounded overflow-hidden">-->
+<!--                        <div class="team-img position-relative overflow-hidden">-->
+<!--                            <img class="img-fluid w-100" src="{% static 'img/team-1.jpg' %}" alt="">-->
+<!--                            <div class="team-social">-->
+<!--                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-twitter fw-normal"></i></a>-->
+<!--                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-facebook-f fw-normal"></i></a>-->
+<!--                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-instagram fw-normal"></i></a>-->
+<!--                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="text-center py-4">-->
+<!--                            <h4 class="text-primary">Full Name</h4>-->
+<!--                            <p class="text-uppercase m-0">Designation</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">-->
+<!--                    <div class="team-item bg-light rounded overflow-hidden">-->
+<!--                        <div class="team-img position-relative overflow-hidden">-->
+<!--                            <img class="img-fluid w-100" src="{% static 'img/team-2.jpg' %}" alt="">-->
+<!--                            <div class="team-social">-->
+<!--                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-twitter fw-normal"></i></a>-->
+<!--                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-facebook-f fw-normal"></i></a>-->
+<!--                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-instagram fw-normal"></i></a>-->
+<!--                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="text-center py-4">-->
+<!--                            <h4 class="text-primary">Full Name</h4>-->
+<!--                            <p class="text-uppercase m-0">Designation</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">-->
+<!--                    <div class="team-item bg-li src="{% static 'img/vendor-4.jpg' %}" alt="">-->
+<!--                    <img src="{% static 'img/vendor-5.jpg' %}" alt="">-->
+<!--                    <img src="{% static 'img/vendor-6.jpg' %}" alt="">-->
+<!--                    <img src="{% static 'img/vendor-7.jpg' %}" alt="">-->
+<!--                    <img src="{% static 'img/vendor-8.jpg' %}" alt="">-->
+<!--                    <img src="{% static 'img/vendor-9.jpg' %}" alt="">-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; Vendor End &ndash;&gt;-->
+
+
+
+
+<!--                        -->
+<!--                         &lt;!&ndash; Back to Top &ndash;&gt;-->
+<!--    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>-->
+
+
+<!--                         &lt;!&ndash; Footer Start &ndash;&gt;-->
+<!--         <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s">-->
+<!--            <div class="container pt-5 pb-4">-->
+<!--                <div class="row g-5">-->
+<!--                    <div class="col-lg-3 col-md-6">-->
+<!--                        <a href="index.html">-->
+<!--                            <h1 class="text-white fw-bold d-block">Good<span class="text-secondary">Stay</span> </h1>-->
+<!--                        </a>-->
+<!--                        <p class="mt-4 text-light"> An inexpensive lodging facility for usually young travelers that typically has dormitory-style sleeping arrangements and  offers meals and planned activities</p>-->
+<!--                        <div class="d-flex hightech-link">-->
+<!--                            <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-facebook-f text-primary"></i></a>-->
+<!--                            <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-twitter text-primary"></i></a>-->
+<!--                            <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-instagram text-primary"></i></a>-->
+<!--                            <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-3 col-md-6";style="padding-left:1000px">-->
+<!--                        <a href="#" class="h3 text-secondary">Short Link</a>-->
+<!--                        <div class="mt-4 d-flex flex-column short-link">-->
+<!--                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Home</a>-->
+<!--                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>About us</a>-->
+<!--                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Services</a>-->
+<!--                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Gallery</a>-->
+<!--                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Testimonials</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+
+<!--                    <div class="col-lg-3 col-md-6">-->
+<!--                        <a href="#" class="h3 text-secondary">Contact Us</a>-->
+<!--                        <div class="text-white mt-4 d-flex flex-column contact-link">-->
+<!--                            <a href="#" class="pb-3 text-light border-bottom border-primary"><i class="fas fa-map-marker-alt text-secondary me-2"></i> 17thMain,2nd Stage,Indiranagar,Bengaluru,Karnataka</a>-->
+<!--                            <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-phone-alt text-secondary me-2"></i> +91 9682550020</a>-->
+<!--                            <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-envelope text-secondary me-2"></i> goodstay@gmail.com</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="col-lg-3 col-md-6">-->
+<!--                        <a href="#" class="h3 text-secondary">Our Timings</a>-->
+<!--                        <div class="mt-4 d-flex flex-column short-link">-->
+<!--                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Mon-Sun:10:00 AM-07:00 PM</a>-->
+
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--         </div>-->
+
+<!--&lt;!&ndash;    &ndash;&gt;-->
+
+<!--    &lt;!&ndash; Footer Start &ndash;&gt;-->
+<!--    <div class="container-fluid bg-dark text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">-->
+<!--        <div class="container">-->
+<!--            <div class="row gx-5">-->
+<!--                <div class="col-lg-4 col-md-6 footer-about">-->
+<!--                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4">-->
+<!--                        <a href="index.html" class="navbar-brand">-->
+<!--                            <h1 class="m-0 text-white"><i class="fa fa-user-tie me-2"></i>GoodStay</h1>-->
+<!--                        </a>-->
+<!--                        <p class="mt-3 mb-4">An inexpensive lodging facility for usually young travelers that typically has dormitory-style sleeping arrangements and  offers meals and planned activities</p>-->
+<!--                        <form action="">-->
+<!--                            <div class="input-group">-->
+<!--                                <input type="text" class="form-control border-white p-3" placeholder="Your Email">-->
+<!--                                <button class="btn btn-dark">Sign Up</button>-->
+<!--                            </div>-->
+<!--                        </form>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-8 col-md-6">-->
+<!--                    <div class="row gx-5">-->
+<!--                        <div class="col-lg-4 col-md-12 pt-5 mb-5">-->
+<!--                            <div class="section-title section-title-sm position-relative pb-3 mb-4">-->
+<!--                                <h3 class="text-light mb-0">Get In Touch</h3>-->
+<!--                            </div>-->
+<!--                            <div class="d-flex mb-2">-->
+<!--                                <i class="bi bi-geo-alt text-primary me-2"></i>-->
+<!--                                <p class="mb-0">17th Main,2nd Stage,Indiranagar,Bengaluru,Karnataka</p>-->
+<!--                            </div>-->
+<!--                            <div class="d-flex mb-2">-->
+<!--                                <i class="bi bi-envelope-open text-primary me-2"></i>-->
+<!--                                <p class="mb-0">goodstay@gmail.com</p>-->
+<!--                            </div>-->
+<!--                            <div class="d-flex mb-2">-->
+<!--                                <i class="bi bi-telephone text-primary me-2"></i>-->
+<!--                                <p class="mb-0">+012 345 67890</p>-->
+<!--                            </div>-->
+<!--                            <div class="d-flex mt-4">-->
+<!--                                <a class="btn btn-primary btn-square me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a>-->
+<!--                                <a class="btn btn-primary btn-square me-2" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>-->
+<!--                                <a class="btn btn-primary btn-square me-2" href="#"><i class="fab fa-linkedin-in fw-normal"></i></a>-->
+<!--                                <a class="btn btn-primary btn-square" href="#"><i class="fab fa-instagram fw-normal"></i></a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">-->
+<!--                            <div class="section-title section-title-sm position-relative pb-3 mb-4">-->
+<!--                                <h3 class="text-light mb-0">Quick Links</h3>-->
+<!--                            </div>-->
+<!--                            <div class="link-animated d-flex flex-column justify-content-start">-->
+<!--                                <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>-->
+<!--                                <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>-->
+<!--                                <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>-->
+<!--                                <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Gallery</a>-->
+<!--                                <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Testimonials</a>-->
+
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">-->
+<!--                            <div class="section-title section-title-sm position-relative pb-3 mb-4">-->
+<!--                                <h3 class="text-light mb-0">Our Timings</h3>-->
+<!--                            </div>-->
+<!--                            <div class="link-animated d-flex flex-column justify-content-start">-->
+<!--                                <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Mon-Sun:10:00 AM-07:00 PM</a>-->
+
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Footer End &ndash;&gt;-->
+
+
+
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
