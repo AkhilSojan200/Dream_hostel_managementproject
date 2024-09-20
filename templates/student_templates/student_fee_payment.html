@@ -1,0 +1,100 @@
+{% extends 'student_templates/student_dash.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <div class="card text-bg-dark" style="margin-right:200px;width:400px">
+        <div class="row justify-content-center">
+            <div class="col-sm-10">
+
+                <h1 style="padding-left:80px">Fee Payment</h1>
+
+                {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <!-- User -->
+                    <div class="form-group">
+                        <label for="{{ form.user.id_for_label }}"></label>
+                        {{ form.user }}
+                    </div>
+
+                    <!-- Date -->
+                    <div class="form-group">
+                        <label for="{{ form.date.id_for_label }}">Date</label>
+                        {{ form.date }}
+                    </div>
+
+                    <!-- Amount -->
+                    <div class="form-group">
+                        <label for="{{ form.amount.id_for_label }}">Amount</label>
+                        {{ form.amount }}
+                    </div>
+
+                    <!-- Payment Mode -->
+                    <div class="form-group">
+                        <label for="{{ form.payment_mode.id_for_label }}">Payment Mode</label>
+                        {{ form.payment_mode }}
+                    </div>
+
+                    <!-- Conditional field rendering for credit card CVV -->
+                    <div id="credit-card-fields" style="display:none;">
+                        <div class="form-group">
+                            <label for="cvv">Credit Card CVV</label>
+                            <input type="text" name="credit_card_cvv" class="form-control" id="cvv" maxlength="4">
+                        </div>
+                    </div>
+
+                    <!-- Conditional field rendering for bank account number -->
+                    <div id="bank-transfer-fields" style="display:none;">
+                        <div class="form-group">
+                            <label for="account_number">Bank Account Number</label>
+                            <input type="text" name="bank_account_number" class="form-control" id="account_number">
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea name="description" class="form-control" id="description" rows="5" style="resize: none;" maxlength="500"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="margin-left:7rem;">Pay Fee Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to dynamically show/hide CVV or Bank Account fields based on payment mode
+        document.addEventListener("DOMContentLoaded", function () {
+            const paymentModeField = document.querySelector("select[name='payment_mode']");
+            const creditCardFields = document.getElementById("credit-card-fields");
+            const bankTransferFields = document.getElementById("bank-transfer-fields");
+
+            function toggleFields() {
+                const paymentMode = paymentModeField.value;
+                if (paymentMode === "credit_card") {
+                    creditCardFields.style.display = "block";
+                    bankTransferFields.style.display = "none";
+                } else if (paymentMode === "bank_transfer") {
+                    creditCardFields.style.display = "none";
+                    bankTransferFields.style.display = "block";
+                } else {
+                    creditCardFields.style.display = "none";
+                    bankTransferFields.style.display = "none";
+                }
+            }
+
+            paymentModeField.addEventListener("change", toggleFields);
+            toggleFields();  // Call once on page load to show the correct fields
+        });
+    </script>
+
+{% endblock %}

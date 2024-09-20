@@ -2,17 +2,22 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 
 from GoodStay_app.forms import RoomDetailsForm, StudentsForm, WardenForm
-from GoodStay_app.models import Custom_student, RoomDetails, Custom_warden, Complaints
+from GoodStay_app.models import Custom_student, RoomDetails, Custom_warden, Complaints, Booking, Fee_payment
 
 
 def admin_dashboard(request):
-    return render(request, 'admin_dashboard.html')
+    return render(request, 'admin_templates/admin_dash.html')
+
+
+def home_dashboard(request):
+    return render(request, 'admin_templates/homeadmin.html')
 
 
 
 def student_view(request):
     username_view = Custom_student.objects.all()
-    return render(request, 'student_view.html', {'viewstudent':username_view})
+    print(username_view)
+    return render(request, 'admin_templates/student_list.html', {'viewstudent':username_view})
 
 
 def student_edit(request,up):
@@ -24,7 +29,7 @@ def student_edit(request,up):
             return redirect("student_view")
     else:
         updateForm = StudentsForm(instance= updatestudent)
-    return render(request, "edit_student.html", {'editstudent': updateForm})
+    return render(request, "admin_templates/edit_student.html", {'editstudent': updateForm})
 
 
 
@@ -36,7 +41,7 @@ def delete_student(request,dl):
 
 def warden_view(request):
     userwarden_view = Custom_warden.objects.all()
-    return render(request, 'warden_view.html', {'viewwarden':userwarden_view})
+    return render(request, 'admin_templates/warden_view.html', {'viewwarden':userwarden_view})
 
 
 def warden_edit(request,upd):
@@ -48,7 +53,7 @@ def warden_edit(request,upd):
             return redirect("warden_view")
     else:
         updateForm = WardenForm(instance=updatewarden)
-    return render(request, "edit_warden.html", {'editwarden': updateForm})
+    return render(request, "admin_templates/edit_warden.html", {'editwarden': updateForm})
 
 
 
@@ -57,6 +62,8 @@ def delete_warden(request,dle):
     deltewarden.delete()
     return redirect("warden_view")
 
+
+# hostel room crud
 def add_hostelroom(request):
     form = RoomDetailsForm()
     if request.method == 'POST':
@@ -64,12 +71,15 @@ def add_hostelroom(request):
         if form.is_valid():
             form.save()
             return redirect('add_hostelroom')
-    return render(request, 'hostel_room.html', {'hostelcreate': form})
-
+    return render(request, 'admin_templates/hostel_room.html', {'hostelcreate': form})
 
 def room_view(request):
     adminroom_view = RoomDetails.objects.all()
-    return render(request, 'room_view.html', {'viewroom':adminroom_view})
+    print("okkkkkk")
+    for room in adminroom_view:
+        print(room.Room_no)
+
+    return render(request, 'admin_templates/room_view.html', {'viewroom': adminroom_view})
 
 
 def room_edit(request,updte):
@@ -81,7 +91,7 @@ def room_edit(request,updte):
             return redirect("room_view")
     else:
         updateForm = RoomDetailsForm(instance=updateroom)
-    return render(request, "edit_room.html", {'editroom': updateForm})
+    return render(request, "admin_templates/edit_room.html", {'editroom': updateForm})
 
 
 
@@ -90,10 +100,11 @@ def delete_room(request,dle):
     delteroom.delete()
     return redirect("room_view")
 
+#complaint
 
 def admin_complaintview(request):
     complaint_admin = Complaints.objects.all()
-    return render(request, 'admin_complaintview.html', {'admincomplaint':complaint_admin})
+    return render(request, 'admin_templates/admin_complaintview.html', {'admincomplaint':complaint_admin})
 
 
 
@@ -105,5 +116,30 @@ def admin_complaintreply(request,id):
         complaintsreply.save()
         return redirect("admin_complaintview")
 
-    return render(request, 'admin_complaintreply.html', {'replycomplaint': complaintsreply})
+    return render(request, 'admin_templates/admin_complaintreply.html', {'replycomplaint': complaintsreply})
+
+
+
+def viewstudent_roombook(request):
+    studentroombook = Booking.objects.all()
+    return render(request, 'admin_templates/adminview_roombook.html', {'roomviewstudent': studentroombook})
+
+
+def accept(request, id):
+    data = Booking.objects.get(id=id)
+    data.status = 1
+    data.save()
+    return redirect('viewstudent_roombook')
+
+
+def reject(request, id):
+    data = Booking.objects.get(id=id)
+    data.status = 2
+    data.save()
+    return redirect('viewstudent_roombook')
+
+def view_payments(request):
+    view_payment = Fee_payment.objects.all()
+    return render(request, 'admin_templates/view_payments.html', {'payments': view_payment})
+
 

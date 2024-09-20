@@ -1,0 +1,52 @@
+{% extends 'admin_templates/admin_dash.html' %}
+{% block content %}
+
+<div class="container" >
+<!-- <div class="card">-->
+    <div class="card text-bg-dark" >
+        <div class="row justify-content-center" >
+      <div class="col-sm-10">
+<table  class="table-responsive">
+    <h2 style="padding-left:250px;">View Rooms</h2>
+    <a href="{% url 'home_dashboard'  %}" class="btn btn-primary btn-round">Back</a>
+
+    <tr>
+        <th>Room_no</th>
+        <th>Details</th>
+        <th>Block_name</th>
+        <th>No_of_beds </th>
+        <th>Monthly_fee</th>
+        <th>Images</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+
+
+{% for i in viewroom %}
+<tr>
+<td>{{i.Room_no}}</td>
+    <td>{{i.details}}</td>
+    <td>{{i.Block_name}}</td>
+    <td>{{i.No_of_beds}}</td>
+    <td>{{i.Monthly_fee}}</td>
+
+    <td><img src="{{ i.image.url }}" alt="demo" height="150px" width="150px"></td>
+    <td>
+    <a href="{% url 'room_edit' i.id %}">
+       <button type="button" class="btn btn-info">edit</button></a>
+    </td>
+        <td>
+    <a href="{% url 'delete_room' i.id %}">
+        <button type="button" class="btn btn-info">delete</button></a></td>
+
+</tr>
+
+{%endfor%}
+
+</table>
+</div>
+</div>
+</div>
+ </div>
+</div>
+{% endblock %}

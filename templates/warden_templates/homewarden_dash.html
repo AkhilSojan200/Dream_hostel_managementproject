@@ -1,0 +1,145 @@
+{% extends 'warden_templates/warden_dashboard.html' %}
+{% block content %}
+
+
+<div class="card">
+
+        <div class="row justify-content-center" >
+      <div class="col-sm-10">
+
+<h2 style="margin-left:280px;margin-top:20px">Warden Dashboard</h2>
+<!--         <a href="{% url 'homewarden_dash'  %}" class="btn btn-dark btn-round">Dashboard Main</a>-->
+
+
+            <div class="row">
+              <div class="col-sm-6 col-md-3">
+                <div class="text-bg-success p-3">
+                <div class="card card-stats card-round">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-icon">
+                        <div
+                          class="icon-big text-center icon-primary bubble-shadow-small"
+                        >
+                          <i class="fas fa-users"></i>
+                        </div>
+                      </div>
+                      <div class="col col-stats ms-3 ms-sm-0">
+                        <div class="numbers">
+                          <a href="{% url 'wardenroom_view' %}">
+                            <b><p class="card-category">Room Info</p></b>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="text-bg-danger p-3" style="height:178px">
+                <div class="card card-stats card-round">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-icon">
+                        <div
+                          class="icon-big text-center icon-info bubble-shadow-small"
+                        >
+                          <i class="fas fa-user-check"></i>
+                        </div>
+                      </div>
+                      <div class="col col-stats ms-3 ms-sm-0">
+                        <div class="numbers">
+                          <a href="{% url 'schedulewarden_view' %}">
+                            <b><p class="card-category">View Room Booked</p></b>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div></div>
+
+
+              <div class="col-sm-6 col-md-3">
+                <div class="text-bg-warning p-3">
+                <div class="card card-stats card-round">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-icon">
+                        <div
+                          class="icon-big text-center icon-success bubble-shadow-small"
+                        >
+                          <i class="fas fa-luggage-cart"></i>
+                        </div>
+                      </div>
+                      <div class="col col-stats ms-3 ms-sm-0">
+                        <div class="numbers">
+                          <a href="{% url 'viewstudent_payments' %}">
+                            <b><p class="card-category">Fee Records</p></b>
+                          </a>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div></div>
+
+
+              <div class="col-sm-6 col-md-3">
+                <div class="text-bg-info p-3">
+                <div class="card card-stats card-round">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-icon">
+                        <div
+                          class="icon-big text-center icon-success bubble-shadow-small"
+                        >
+                          <i class="fas fa-luggage-cart"></i>
+                        </div>
+                      </div>
+                      <div class="col col-stats ms-3 ms-sm-0">
+                        <div class="numbers">
+                          <a href="{% url 'complaintwarden_view' %}">
+                            <b><p class="card-category">Complaint</p></b>
+                          </a>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="text-bg-primary p-3" style="margin-top:10px">
+                <div class="card card-stats card-round">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-icon">
+                        <div
+                          class="icon-big text-center icon-secondary bubble-shadow-small"
+                        >
+                          <i class="far fa-check-circle"></i>
+                        </div>
+                      </div>
+                      <div class="col col-stats ms-3 ms-sm-0">
+                        <div class="numbers">
+                          <a href="{% url 'notice_view' %}">
+                            <b> <p class="card-category">Notice</p></b>
+                          </a>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+         </div>
+        </div>
+      </div>
+
+{% endblock %}

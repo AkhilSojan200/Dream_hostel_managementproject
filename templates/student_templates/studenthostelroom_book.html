@@ -1,0 +1,54 @@
+{% extends 'student_templates/student_dash.html' %}
+{% block content %}
+
+<div class="container" >
+
+
+
+
+    <div class="card" style="margin-right:120px">
+  <table  class="table">
+    <h2 style="padding-left:180px">View Hostel Room Booked</h2>
+    <tr>
+         <th>Hostel</th>
+        <th>Date_in</th>
+        <th>Date_out</th>
+
+        <th>Status</th>
+
+    </tr>
+
+
+
+{% for i in bookingroom %}
+<tr>
+<td>{{i.schedule.hostel}}</td>
+
+    <td>{{i.schedule.date_in}}</td>
+    <td>{{i.schedule.date_out}}</td>
+    <td>{{i.schedule.end_time}}</td>
+
+<td>
+    {% if i.status == 0 %}
+
+<button type="button" class="btn btn-primary">Status Pending</button>
+    {% elif i.status == 1 %}
+
+<button type="button" class="btn btn-success">Accept</button>
+    {% else %}
+
+<button type="button" class="btn btn-danger">Reject</button>
+    {% endif %}
+</td>
+
+
+</tr>
+
+
+{%endfor%}
+
+</table>
+</div>
+</div>
+</div>
+{% endblock %}

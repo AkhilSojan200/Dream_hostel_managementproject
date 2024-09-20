@@ -1,0 +1,20 @@
+{% extends 'warden_templates/warden_dashboard.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="container">
+<div class="card" style="margin-right:200px;width:600px">
+<div class="row justify-content-center" >
+      <div class="col-sm-10">
+
+<form method="post" enctype="multipart/form-data">
+     {% csrf_token %}
+
+    {{general_notice|crispy}}
+<input type="submit">
+
+
+</form>
+</div>
+</div>
+{% endblock %}

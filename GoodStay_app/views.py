@@ -56,11 +56,11 @@ def login_page(request):
         if user is not None:
             login(request,user)
             if user.is_staff:
-                return redirect('admin_dashboard')
+                return redirect('home_dashboard')
             elif user.is_student:
-                return redirect('student_dashboard')
+                return redirect('homestudent_dash')
             elif user.is_warden:
-                return redirect('warden_dashboard')
+                return redirect('homewarden_dash')
 
     return render(request,'login_page.html')
 
@@ -68,3 +68,26 @@ def login_page(request):
 def logout_temp(request):
     logout(request)
     return redirect('index')
+
+
+# views.py
+from django.contrib.auth import views as auth_views
+from django.urls import reverse_lazy
+
+# Password reset views using Django's built-in system
+class CustomPasswordResetView(auth_views.PasswordResetView):
+    template_name = 'forgot_password.html'
+    email_template_name = 'password_reset_email.html'
+    subject_template_name = 'password_reset_subject.txt'
+    success_url = reverse_lazy('password_reset_done')
+
+class CustomPasswordResetDoneView(auth_views.PasswordResetDoneView):
+    template_name = 'password_reset_done.html'
+
+class CustomPasswordResetConfirmView(auth_views.PasswordResetConfirmView):
+    template_name = 'password_reset_confirm.html'
+    success_url = reverse_lazy('password_reset_complete')
+
+class CustomPasswordResetCompleteView(auth_views.PasswordResetCompleteView):
+    template_name = 'password_reset_complete.html'
+

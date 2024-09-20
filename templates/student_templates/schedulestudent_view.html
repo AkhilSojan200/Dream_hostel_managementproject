@@ -1,0 +1,71 @@
+{% extends 'student_templates/student_dash.html' %}
+{% block content %}
+
+<div class="container" >
+
+    {% for message in messages %}
+    <div class="alert alert-primary" role="alert">
+        {{ message }}
+    </div>
+    {% endfor %}
+
+
+<div class="card" style="margin-left:3px;margin-right:100px">
+    <h2 style="padding-left:250px">View Booked</h2>
+    <a href="{% url 'homestudent_dash'  %}" class="btn btn-primary btn-round" style="margin-left:590px">Back</a>
+
+
+<table  class="table">
+    <thead class="thead-dark">
+    <tr>
+
+        <th>Room No</th>
+
+        <th>Block</th>
+        <th>Date_in</th>
+        <th>Date_out</th>
+        <th>Status</th>
+
+
+    </tr>
+    </thead>
+
+
+
+
+{% for i in viewscdules %}
+
+
+<tr>
+
+     <td>{{i.schedule.Room_no}}</td>
+     <td>{{i.schedule.Block_name}}</td>
+    <td>{{i.date_in}}</td>
+    <td>{{i.date_out}}</td>
+
+<td>
+    {% if i.status == 0 %}
+
+<button type="button" class="btn btn-primary">Status Pending</button>
+    {% elif i.status == 1 %}
+
+<button type="button" class="btn btn-success">Accept</button>
+    {% else %}
+
+<button type="button" class="btn btn-danger">Reject</button>
+    {% endif %}
+</td>
+
+
+
+
+</tr>
+
+
+{%endfor%}
+
+</table>
+</div>
+</div>
+</div>
+{% endblock %}

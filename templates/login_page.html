@@ -3,11 +3,12 @@
 {% block content %}
 
 
-     <div class="container py-3 h-70">
+     <div class="container py-2 h-70" >
+
          <div
-  class="vh-100 bg-image"
+  class="vh-100% bg-image"
   style="
-    background-image: url('https://images.pexels.com/photos/2246476/pexels-photo-2246476.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')">
+    background-image: url('https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg')">
 
 
 
@@ -39,7 +40,9 @@
   <div class="form-outline form-white mb-4">
     <label for="exampleInputPassword1" class="form-label">Password</label>
     <input type="password" class="form-control" id="exampleInputPassword1" name="pass" placeholder="Password">
-      <p class="small mb-5 pb-lg-2 text-white-50">Forgot password?</p>
+              <a href="{% url 'password_reset' %}" >
+
+                  <p class="small mb-5 pb-lg-2 text-white-50">Forgot password?</p></a>
   </div>
     <a href="{% url 'admin_dashboard' %}">
         <button type="submit" class="btn btn-outline-light btn-lg px-5">Submit</button></a>

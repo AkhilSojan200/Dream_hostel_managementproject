@@ -1,0 +1,45 @@
+{% extends 'warden_templates/warden_dashboard.html' %}
+{% block content %}
+
+<div class="container" >
+<!--<div class="card" >-->
+    <div class="card" style="margin-right:70px;width:790px" >
+
+<h2 style="padding-left:250px;" >View Booked Rooms
+     <a href="{% url 'homewarden_dash'  %}" class="btn btn-primary btn-round" style="margin-left:200px">Back</a></h2>
+     <table  class="table">
+    <thead class="thead-dark">
+    <tr>
+
+        <th>Room</th>
+        <th>Student</th>
+        <th>Date_in</th>
+        <th>Date_out</th>
+
+    </tr>
+
+    </thead>
+
+
+<tbody>
+{% for i in datetime %}
+<tr>
+
+     <td>{{i.schedule}}</td>
+    <td>{{i.user.name}}</td>
+    <td>{{i.date_in}}</td>
+    <td>{{i.date_out}}</td>
+
+
+
+
+
+</tr>
+
+{%endfor%}
+</tbody>
+</table>
+</div>
+</div>
+</div>
+{% endblock %}
